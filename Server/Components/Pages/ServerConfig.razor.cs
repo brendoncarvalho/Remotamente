@@ -226,7 +226,7 @@ public partial class ServerConfig : AuthComponentBase
             return;
         }
 
-        var success = await EmailSender.SendEmailAsync(User.Email, L["SuporteRemoto Test Email"], L["Congratulations! Your SMTP settings are working!"], User.OrganizationID);
+        var success = await EmailSender.SendEmailAsync(User.Email, L["Remotamente Test Email"], L["Congratulations! Your SMTP settings are working!"], User.OrganizationID);
         if (success)
         {
             ToastService.ShowToast(L["Test email sent to {0}. Check your inbox (or spam folder).", User.Email].Value);

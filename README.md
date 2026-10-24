@@ -1,4 +1,4 @@
-# SuporteRemoto
+# Remotamente
 
 Solução de acesso remoto e execução remota de scripts, mantida por [brendon.dev.br](https://brendon.dev.br), construída com .NET, Blazor e SignalR.
 

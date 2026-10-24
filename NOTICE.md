@@ -1,6 +1,6 @@
 # Aviso
 
-SuporteRemoto é um trabalho derivado do projeto **Remotely**
+Remotamente é um trabalho derivado do projeto **Remotely**
 (https://github.com/immense/Remotely), Copyright © Immense Networks e
 colaboradores, licenciado sob a GNU General Public License v3.0.
 

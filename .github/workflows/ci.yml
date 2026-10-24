@@ -91,14 +91,14 @@ jobs:
           --output Server/bin/publish
 
       - name: Build image
-        run: docker build -f Server/Dockerfile -t suporteremoto-server:ci .
+        run: docker build -f Server/Dockerfile -t remotamente-server:ci .
 
       - name: Run and check health
         run: |
           docker run -d --name srv \
             -e ASPNETCORE_HTTP_PORTS=5000 \
             -e ASPNETCORE_ENVIRONMENT=Production \
-            suporteremoto-server:ci
+            remotamente-server:ci
           # /api/healthcheck only answers requests from the machine itself
           # (LocalOnlyFilter), so call it from inside the container, like the
           # image's own HEALTHCHECK does.

@@ -12,7 +12,7 @@ public class ViewerModel(IDataService _dataService) : PageModel
     public string FaviconUrl { get; } = "favicon.ico";
     public string LogoUrl { get; set; } = string.Empty;
     public string PageDescription { get; } = "Open-source remote support tools.";
-    public string PageTitle { get; } = "SuporteRemoto Remote Control";
+    public string PageTitle { get; } = "Remotamente Remote Control";
     public string ThemeUrl { get; private set; } = string.Empty;
     public string UserDisplayName { get; private set; } = string.Empty;
 
