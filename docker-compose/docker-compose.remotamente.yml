@@ -1,0 +1,19 @@
+# Exemplo de implantação do Remotamente com Docker Compose.
+# Para migrar de um Remotely existente, veja docs/MIGRACAO-COOLIFY.md:
+# mantenha o MESMO volume e as MESMAS variáveis; troque só a imagem.
+services:
+  remotamente:
+    image: ghcr.io/brendoncarvalho/remotamente:latest
+    container_name: remotamente
+    restart: unless-stopped
+    volumes:
+      - /var/www/remotely:/app/AppData
+    ports:
+      - "5000:5000"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_HTTP_PORTS=5000
+      - Remotely_ApplicationOptions__DbProvider=SQLite
+      - Remotely_ConnectionStrings__SQLite=Data Source=/app/AppData/Remotely.db
+      # Gateway da rede Docker usado para confiar nos cabeçalhos X-Forwarded-* do proxy.
+      - Remotely_ApplicationOptions__DockerGateway=172.28.0.1
