@@ -59,6 +59,11 @@ public class AppDb : IdentityDbContext
 
         base.OnModelCreating(builder);
 
+        // ASP.NET Core Identity 10 maps passkeys by default. Remotely doesn't use
+        // them, and the existing migrations have no passkey table.
+        builder.Ignore<IdentityUserPasskey<string>>();
+        builder.Ignore<IdentityPasskeyData>();
+
         builder.Entity<IdentityUser>().ToTable("RemotelyUsers");
 
         builder.Entity<Organization>()
