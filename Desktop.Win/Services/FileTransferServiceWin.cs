@@ -1,6 +1,7 @@
 ﻿using Remotely.Desktop.Shared.Abstractions;
 using Remotely.Desktop.Shared.Services;
 using Remotely.Desktop.Shared.ViewModels;
+using Remotely.Desktop.UI;
 using Remotely.Desktop.UI.Controls.Dialogs;
 using Remotely.Desktop.UI.Services;
 using Remotely.Desktop.UI.Views;
@@ -207,8 +208,8 @@ public class FileTransferServiceWin : IFileTransferService
         // Prevent multiple dialogs from popping up.
         if (_result is null)
         {
-            _result = await _dialogProvider.Show("File transfer complete.  Show folder?",
-                "Transfer Complete",
+            _result = await _dialogProvider.Show(Loc.TransferCompleteShowFolder,
+                Loc.TransferComplete,
                 MessageBoxType.YesNo);
 
             if (_result == MessageBoxResult.Yes)

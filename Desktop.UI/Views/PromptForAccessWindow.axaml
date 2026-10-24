@@ -1,4 +1,5 @@
 ﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:loc="clr-namespace:Remotely.Desktop.UI"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -10,7 +11,7 @@
 		x:Name="PromptForAccessWindowRef"
         BorderBrush="DimGray"
         BorderThickness="1"
-        Title="Remote Control Request" 
+        Title="{x:Static loc:Loc.RemoteControlRequest}" 
         MinHeight="200"
         MinWidth="250"
         Height="275" 
@@ -31,9 +32,7 @@
     </Grid.RowDefinitions>
 
     <StackPanel Grid.Row="0">
-      <TextBlock Classes="SectionHeader"  FontWeight="Bold" FontSize="18" Foreground="DimGray" Margin="10" TextWrapping="Wrap">
-        A remote control session has been requested.
-      </TextBlock>
+      <TextBlock Classes="SectionHeader"  FontWeight="Bold" FontSize="18" Foreground="DimGray" Margin="10" TextWrapping="Wrap" Text="{x:Static loc:Loc.RemoteControlRequested}" />
 
       <TextBlock FontSize="16"
                  Margin="10"
@@ -43,11 +42,11 @@
     </StackPanel>
 
     <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
-      <Button Width="60" Height="40" Content="Yes" Margin="10"
+      <Button Width="60" Height="40" Content="{x:Static loc:Loc.Yes}" Margin="10"
               Classes="NormalButton"
               Command="{Binding SetResultYes}"
               CommandParameter="{Binding #PromptForAccessWindowRef}"></Button>
-      <Button Width="60" Height="40" Content="No" Margin="10"
+      <Button Width="60" Height="40" Content="{x:Static loc:Loc.No}" Margin="10"
               Classes="NormalButton"
               Command="{Binding SetResultNo}"
               CommandParameter="{Binding #PromptForAccessWindowRef}"></Button>

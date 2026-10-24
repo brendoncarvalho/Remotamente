@@ -1,4 +1,5 @@
 <Window xmlns="https://github.com/avaloniaui"
+        xmlns:loc="clr-namespace:Remotely.Desktop.UI"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -18,7 +19,7 @@
 		ShowActivated="True"
 		x:DataType="vm:IChatWindowViewModel"
 		x:Name="ChatWindowRef"
-        Title="Chat Session" Height="450" Width="450">
+        Title="{x:Static loc:Loc.ChatSession}" Height="450" Width="450">
 
 	<Design.DataContext>
 		<fakes:FakeChatWindowViewModel />
@@ -54,7 +55,7 @@
 								<DockPanel Margin="5">
 									<TextBlock Text="{Binding SenderName}" FontWeight="Bold" TextWrapping="Wrap" FontSize="14">
 										<TextBlock.Styles>
-											<Style Selector="TextBlock[Text=You]">
+											<Style Selector="TextBlock[Text=You], TextBlock[Text=Você]">
 												<Style.Setters>
 													<Setter Property="Foreground" Value="SteelBlue"></Setter>
 												</Style.Setters>

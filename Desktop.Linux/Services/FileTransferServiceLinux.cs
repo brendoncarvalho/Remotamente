@@ -3,6 +3,7 @@ using Remotely.Desktop.Shared.Services;
 using Remotely.Desktop.Shared.ViewModels;
 using Microsoft.Extensions.Logging;
 using System.Collections.Concurrent;
+using Remotely.Desktop.UI;
 using Remotely.Desktop.UI.Controls.Dialogs;
 using Remotely.Desktop.UI.Views;
 using Remotely.Desktop.UI.Services;
@@ -150,8 +151,8 @@ public class FileTransferServiceLinux : IFileTransferService
         {
             _messageBoxPending = true;
 
-            await _dialogProvider.Show($"File tranfer complete.  Files saved to directory:\n\n{GetBaseDirectory()}",
-                "Tranfer Complete",
+            await _dialogProvider.Show(Loc.TransferCompleteSavedTo(GetBaseDirectory()),
+                Loc.TransferComplete,
                 MessageBoxType.OK);
 
             _messageBoxPending = false;

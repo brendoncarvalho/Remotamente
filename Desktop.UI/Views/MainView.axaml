@@ -1,4 +1,5 @@
 <UserControl xmlns="https://github.com/avaloniaui"
+        xmlns:loc="clr-namespace:Remotely.Desktop.UI"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -14,25 +15,21 @@
 
 	<Grid ColumnDefinitions="200, *" Margin="10">
 		<StackPanel Grid.Column="0" Margin="0,0,10,0">
-			<TextBlock Classes="SectionHeader">Share Screen</TextBlock>
-			<TextBlock FontSize="16" Margin="0,10,0,5">Your Session ID:</TextBlock>
+			<TextBlock Classes="SectionHeader" Text="{x:Static loc:Loc.ShareScreen}" />
+			<TextBlock FontSize="16" Margin="0,10,0,5" Text="{x:Static loc:Loc.YourSessionId}" />
 			<TextBox Name="SessionIDTextBox" FontSize="16" Text="{Binding StatusMessage}" IsReadOnly="True"/>
 			<Grid Margin="0,10,0,0">
-				<TextBlock VerticalAlignment="Center">
-					Invite Link:
-				</TextBlock>
-				<Button HorizontalAlignment="Right" Classes="NormalButton" Command="{Binding CopyLinkCommand}">
-					Copy
-				</Button>
+				<TextBlock VerticalAlignment="Center" Text="{x:Static loc:Loc.InviteLink}" />
+				<Button HorizontalAlignment="Right" Classes="NormalButton" Command="{Binding CopyLinkCommand}" Content="{x:Static loc:Loc.Copy}" />
 			</Grid>
-			<TextBlock Margin="0,10,0,0" Foreground="DodgerBlue" IsVisible="{Binding IsCopyMessageVisible}" Opacity="{Binding CopyMessageOpacity}" HorizontalAlignment="Right">Copied to clipboard!</TextBlock>
+			<TextBlock Margin="0,10,0,0" Foreground="DodgerBlue" IsVisible="{Binding IsCopyMessageVisible}" Opacity="{Binding CopyMessageOpacity}" HorizontalAlignment="Right" Text="{x:Static loc:Loc.CopiedToClipboard}" />
 		</StackPanel>
 
 		<Grid Grid.Column="1" Margin="10,0,0,0" RowDefinitions="Auto, Auto, *, Auto">
-			<TextBlock Grid.Row="0" Classes="SectionHeader" Margin="0,0,0,10">Viewers</TextBlock>
+			<TextBlock Grid.Row="0" Classes="SectionHeader" Margin="0,0,0,10" Text="{x:Static loc:Loc.Viewers}" />
 			<Grid Grid.Row="1" Margin="0,5,0,0">
-				<TextBlock FontSize="8" Margin="5,0,0,0">Name</TextBlock>
-				<TextBlock FontSize="8" Margin="0,0,5,0" HorizontalAlignment="Right">Has Control</TextBlock>
+				<TextBlock FontSize="8" Margin="5,0,0,0" Text="{x:Static loc:Loc.Name}" />
+				<TextBlock FontSize="8" Margin="0,0,5,0" HorizontalAlignment="Right" Text="{x:Static loc:Loc.HasControl}" />
 			</Grid>
 			<ListBox Grid.Row="2" Name="ViewerListBox" VerticalAlignment="Stretch" ItemsSource="{Binding Viewers}" SelectionMode="Multiple" SelectedItems="{Binding SelectedViewers}">
 				<ListBox.ItemTemplate>
@@ -45,9 +42,7 @@
 				</ListBox.ItemTemplate>
 			</ListBox>
 			<Button Grid.Row="3" Classes="NormalButton" HorizontalAlignment="Right"  Margin="0,5,0,0"
-					Command="{Binding RemoveViewersCommand}">
-				Remove
-			</Button>
+					Command="{Binding RemoveViewersCommand}" Content="{x:Static loc:Loc.Remove}" />
 		</Grid>
 		
 		<Button x:Name="OptionsButton"
@@ -67,7 +62,7 @@
               >
 			<Button.ContextMenu>
 				<ContextMenu>
-					<MenuItem Header="Change Server" Command="{Binding ChangeServerCommand}"></MenuItem>
+					<MenuItem Header="{x:Static loc:Loc.ChangeServer}" Command="{Binding ChangeServerCommand}"></MenuItem>
 				</ContextMenu>
 			</Button.ContextMenu>
 			<Image 

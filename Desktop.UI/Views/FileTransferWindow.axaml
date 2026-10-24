@@ -1,4 +1,5 @@
 ﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:loc="clr-namespace:Remotely.Desktop.UI"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -7,7 +8,7 @@
         xmlns:local="clr-namespace:Remotely.Desktop.UI.Views"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Remotely.Desktop.UI.Views.FileTransferWindow"
-        Title="File Transfer"
+        Title="{x:Static loc:Loc.FileTransfer}"
         Height="300" Width="400" 
         Topmost="True"
 		x:DataType="vm:IFileTransferWindowViewModel"
@@ -27,7 +28,7 @@
     </Grid.RowDefinitions>
 
     <StackPanel Grid.Row="0" Orientation="Horizontal">
-      <TextBlock FontWeight="Bold" FontSize="16" Text="Upload files to "></TextBlock>
+      <TextBlock FontWeight="Bold" FontSize="16" Text="{x:Static loc:Loc.UploadFilesTo}"></TextBlock>
       <TextBlock FontWeight="Bold" FontSize="16" Text="{Binding ViewerName}"></TextBlock>
     </StackPanel>
 
