@@ -4,27 +4,23 @@
 @inject IDataService DataService
 @inject IDataService DataService
 
-<div class="ps-4 pb-1 pe-0 pt-0 navbar navbar-dark" style="background-color: rgba(0,0,0,0.3)">
-    <a class="navbar-brand text-start" href="">
-        <div class="logo-title">
-            @if (!string.IsNullOrWhiteSpace(_organization?.OrganizationName))
-            {
-                @_organization.OrganizationName
-            }
-            else
-            {
-                <span>Remotamente</span>
-            }
-        </div>
-        <div class="logo-subtitle">@L["Support Portal"]</div>
+<div class="rm-brand">
+    <a class="rm-brand-link" href="">
+        <span class="rm-brand-mark" aria-hidden="true">@BrandInitial</span>
+        <span class="rm-brand-text">
+            <span class="logo-title">@BrandName</span>
+            <span class="logo-subtitle">@L["Support Portal"]</span>
+        </span>
     </a>
-    <button class="navbar-toggler" @onclick="ToggleNavMenu">
-        <span class="navbar-toggler-icon"></span>
+    <button class="rm-nav-toggle" type="button" @onclick="ToggleNavMenu" aria-label="Menu" aria-expanded="@(!collapseNavMenu)">
+        <span class="oi @(collapseNavMenu ? "oi-menu" : "oi-x")" aria-hidden="true"></span>
     </button>
 </div>
 
-<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
-    <ul class="nav flex-column">
+<div class="rm-scrim @(collapseNavMenu ? "" : "open")" @onclick="ToggleNavMenu"></div>
+
+<nav class="@NavMenuCssClass" @onclick="ToggleNavMenu" aria-label="Menu">
+    <ul class="nav flex-column rm-nav-list">
 
         <li class="nav-item px-3">
             <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
@@ -75,7 +71,7 @@
 
         @if (_user?.IsAdministrator == true)
         {
-            <li class="nav-item px-3 pt-3 small text-muted">
+            <li class="nav-item rm-nav-label">
                 @L["Admin"]
             </li>
 
@@ -112,44 +108,44 @@
 
         <AuthorizeView>
             <Authorized>
-                <li class="px-3 mt-3">
-                    <a class="btn btn-link text-light" href="Account/Manage">
+                <li class="rm-foot-item rm-foot-first">
+                    <a class="rm-foot-link" href="Account/Manage">
                         @L["Account"]
                     </a>
                 </li>
-                <li class="px-3">
+                <li class="rm-foot-item">
                     <form action="Account/Logout" method="post">
                         <AntiforgeryToken />
                         <input type="hidden" name="ReturnUrl" value="@_currentUrl" />
-                        <button type="submit" class="btn btn-link text-light">
+                        <button type="submit" class="rm-foot-link">
                             @L["Logout"]
                         </button>
                     </form>
                 </li>
             </Authorized>
             <NotAuthorized>
-                <li class="px-3 mt-3">
-                    <a class="btn btn-link text-light" href="Account/Login">@L["Log in"]</a>
+                <li class="rm-foot-item">
+                    <a class="rm-foot-link" href="Account/Login">@L["Log in"]</a>
                 </li>
                 @if (_isRegistrationEnabled)
                 {
-                    <li class="px-3">
-                        <a class="btn btn-link text-light" href="Account/Register">@L["Register"]</a>
+                    <li class="rm-foot-item">
+                        <a class="rm-foot-link" href="Account/Register">@L["Register"]</a>
                     </li>
                 }
             </NotAuthorized>
         </AuthorizeView>
 
-        <li class="px-3 mt-3">
-            <a class="btn btn-link text-light" href="/about">@L["About"]</a>
+        <li class="rm-foot-item">
+            <a class="rm-foot-link" href="/about">@L["About"]</a>
         </li>
 
-        <li class="px-3 mt-1">
-            <a class="btn btn-link text-light btn-sm" href="/culture/set?culture=pt-BR&redirectUri=@Uri.EscapeDataString("/" + _currentUrl)" title="Português (Brasil)">PT</a>
-            <a class="btn btn-link text-light btn-sm" href="/culture/set?culture=en&redirectUri=@Uri.EscapeDataString("/" + _currentUrl)" title="English">EN</a>
+        <li class="rm-foot-item rm-foot-lang">
+            <a class="rm-foot-link rm-lang" href="/culture/set?culture=pt-BR&redirectUri=@Uri.EscapeDataString("/" + _currentUrl)" title="Português (Brasil)">PT</a>
+            <a class="rm-foot-link rm-lang" href="/culture/set?culture=en&redirectUri=@Uri.EscapeDataString("/" + _currentUrl)" title="English">EN</a>
         </li>
     </ul>
-</div>
+</nav>
 
 @code {
     private bool collapseNavMenu = true;
@@ -200,7 +196,13 @@
         }
     }
 
-    private string NavMenuCssClass => collapseNavMenu ? "collapse" : "";
+    private string NavMenuCssClass => collapseNavMenu ? "rm-nav" : "rm-nav open";
+
+    private string BrandName => string.IsNullOrWhiteSpace(_organization?.OrganizationName)
+        ? "Remotamente"
+        : _organization.OrganizationName;
+
+    private string BrandInitial => BrandName.Trim().Substring(0, 1).ToUpperInvariant();
 
 
     private void ToggleNavMenu()

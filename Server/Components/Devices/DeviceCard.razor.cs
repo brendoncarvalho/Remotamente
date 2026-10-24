@@ -18,6 +18,13 @@ namespace Remotely.Server.Components.Devices;
 
 public partial class DeviceCard : AuthComponentBase
 {
+    // Fractions (0..1) come from the agent; width uses the invariant culture so pt-BR's decimal comma can't break the CSS.
+    private static string UsageWidth(double fraction) =>
+        Math.Clamp(fraction * 100, 0, 100).ToString("0", System.Globalization.CultureInfo.InvariantCulture);
+
+    private static string UsageLevel(double fraction) =>
+        fraction >= 0.9 ? "high" : fraction >= 0.75 ? "mid" : "ok";
+
     private readonly ConcurrentDictionary<string, double> _fileUploadProgressLookup = new();
     private ElementReference _card;
     private Version _currentVersion = new();
