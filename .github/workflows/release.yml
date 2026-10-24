@@ -1,0 +1,159 @@
+name: Release
+
+# Builds everything the server distributes (agent packages, desktop clients),
+# bakes it into the server image and publishes it to GitHub Container Registry.
+# Mirrors Utilities/Publish.ps1, which only runs on a machine with Visual Studio.
+
+on:
+  workflow_dispatch:
+  push:
+    tags: [ 'v*' ]
+  # Dry run (no push) when this workflow itself changes.
+  pull_request:
+    paths: [ '.github/workflows/release.yml' ]
+
+permissions:
+  contents: read
+
+env:
+  DOTNET_CLI_TELEMETRY_OPTOUT: 1
+  DOTNET_NOLOGO: 1
+
+jobs:
+  clients:
+    name: Agents and desktop clients (Windows runner)
+    runs-on: windows-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Compute version from the commit date
+        id: version
+        shell: pwsh
+        run: |
+          $date = [DateTimeOffset]::Parse((git show -s --format=%ci))
+          $version = $date.ToString("yyyy.MM.dd.HHmm")
+          "version=$version" >> $env:GITHUB_OUTPUT
+          Write-Host "Version: $version"
+
+      - name: Publish agents
+        shell: pwsh
+        run: |
+          $v = "${{ steps.version.outputs.version }}"
+          foreach ($rid in 'win-x64','win-x86','linux-x64','osx-x64','osx-arm64') {
+            dotnet publish Agent /p:Version=$v /p:FileVersion=$v --runtime $rid --self-contained --configuration Release --output "Agent/bin/publish/$rid"
+            if ($LASTEXITCODE -ne 0) { throw "Agent publish failed for $rid" }
+          }
+
+      - name: Publish desktop clients
+        shell: pwsh
+        run: |
+          $v = "${{ steps.version.outputs.version }}"
+          # Packaged clients go inside the agent packages; the GUI apps go to Server/wwwroot/Content.
+          $profiles = @(
+            @('Desktop.Linux', 'packaged-linux-x64'),
+            @('Desktop.Linux', 'desktop-linux-x64'),
+            @('Desktop.Win',   'packaged-win-x86'),
+            @('Desktop.Win',   'packaged-win-x64'),
+            @('Desktop.Win',   'desktop-win-x64'),
+            @('Desktop.Win',   'desktop-win-x86')
+          )
+          foreach ($p in $profiles) {
+            dotnet publish $p[0] /p:Version=$v /p:FileVersion=$v -p:PublishProfile=$($p[1]) --configuration Release
+            if ($LASTEXITCODE -ne 0) { throw "Publish failed for $($p[0]) / $($p[1])" }
+          }
+
+      - name: Zip agent packages
+        shell: pwsh
+        run: |
+          $content = "Server/wwwroot/Content"
+          $packages = @{
+            'win-x64'   = 'Remotely-Win-x64.zip'
+            'win-x86'   = 'Remotely-Win-x86.zip'
+            'linux-x64' = 'Remotely-Linux.zip'
+            'osx-x64'   = 'Remotely-MacOS-x64.zip'
+            'osx-arm64' = 'Remotely-MacOS-arm64.zip'
+          }
+          foreach ($rid in $packages.Keys) {
+            Compress-Archive -Path "Agent/bin/publish/$rid/*" -DestinationPath "$content/$($packages[$rid])" -Force
+          }
+          Get-ChildItem $content -Recurse -File | Where-Object { $_.Extension -in '.zip','.exe' -or $_.Name -eq 'Remotely_Desktop' } |
+            ForEach-Object { "{0,12:N0}  {1}" -f $_.Length, $_.FullName.Substring($PWD.Path.Length + 1) }
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: server-content
+          if-no-files-found: error
+          retention-days: 7
+          path: |
+            Server/wwwroot/Content/*.zip
+            Server/wwwroot/Content/Win-x64/
+            Server/wwwroot/Content/Win-x86/
+            Server/wwwroot/Content/Linux-x64/
+
+  image:
+    name: Server image
+    runs-on: ubuntu-latest
+    needs: clients
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: server-content
+          path: Server/wwwroot/Content
+
+      - name: Publish server
+        run: >
+          dotnet publish Server/Server.csproj
+          --configuration Release
+          --runtime linux-x64
+          --self-contained false
+          /p:Version=${{ needs.clients.outputs.version }}
+          /p:FileVersion=${{ needs.clients.outputs.version }}
+          --output Server/bin/publish
+
+      - name: Check that the packages are in the publish output
+        run: |
+          ls -l Server/bin/publish/wwwroot/Content/*.zip Server/bin/publish/wwwroot/Content/*/Remotely_Desktop*
+
+      - name: Build image
+        run: |
+          IMAGE="ghcr.io/${GITHUB_REPOSITORY,,}"
+          echo "IMAGE=$IMAGE" >> "$GITHUB_ENV"
+          docker build -f Server/Dockerfile \
+            -t "$IMAGE:latest" \
+            -t "$IMAGE:${{ needs.clients.outputs.version }}" \
+            -t "$IMAGE:sha-${GITHUB_SHA::7}" .
+
+      - name: Smoke test (health check from inside the container)
+        run: |
+          docker run -d --name srv -e ASPNETCORE_HTTP_PORTS=5000 -e ASPNETCORE_ENVIRONMENT=Production "$IMAGE:latest"
+          for i in $(seq 1 30); do
+            if docker exec srv curl -fsS http://localhost:5000/api/healthcheck; then echo "Healthy."; exit 0; fi
+            sleep 2
+          done
+          docker logs srv
+          exit 1
+
+      - name: Log in to GHCR
+        if: github.event_name != 'pull_request'
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+
+      - name: Push image
+        if: github.event_name != 'pull_request'
+        run: docker push --all-tags "$IMAGE"
