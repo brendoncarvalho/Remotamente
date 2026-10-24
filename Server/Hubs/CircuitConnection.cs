@@ -311,7 +311,7 @@ public class CircuitConnection : CircuitHandler, ICircuitConnection
         var username = string.Empty;
         if (runAsHostedService)
         {
-            username = "Remotely Server";
+            username = "SuporteRemoto Server";
         }
         else if (User is not null)
         {

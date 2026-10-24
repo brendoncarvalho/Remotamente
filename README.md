@@ -1,17 +1,16 @@
-# Remotely
+# SuporteRemoto
 
-A remote control and remote scripting solution, built with .NET, Blazor, and SignalR Core.
+Solução de acesso remoto e execução remota de scripts, mantida por [brendon.dev.br](https://brendon.dev.br), construída com .NET, Blazor e SignalR.
 
-[![Build Status](https://dev.azure.com/immybot/Remotely/_apis/build/status%2Fimmense.Remotely?branchName=master)](https://dev.azure.com/immybot/Remotely/_build/latest?definitionId=2&branchName=master)
-[![Tests](https://github.com/immense/Remotely/actions/workflows/run_tests.yml/badge.svg?branch=master)](https://github.com/immense/Remotely/actions/workflows/run_tests.yml)
+> **Baseado no [Remotely](https://github.com/immense/Remotely)** (© Immense Networks e colaboradores), licenciado sob a GNU GPL v3. Este projeto parte do commit `ec0d45d` (17/12/2024) do upstream e mantém a mesma licença. Veja o arquivo `LICENSE` e `NOTICE.md`.
 
-## Project Links
+Status: em modernização (migração para .NET LTS atual, atualização de dependências e revisão de segurança). Ainda não use em produção.
 
-Subreddit: https://www.reddit.com/r/remotely_app/  
-Docker: https://hub.docker.com/r/immybot/remotely  
-Tutorial: https://www.youtube.com/watch?v=t-TFvr7sZ6M (Thanks, @bmcgonag!)
+---
 
-![image](.github/media/ask-remote.png)
+## Documentação original (Remotely)
+
+As instruções abaixo vêm do projeto original e ainda podem referenciar nomes e endereços do Remotely.
 
 ## Quickstart
 
