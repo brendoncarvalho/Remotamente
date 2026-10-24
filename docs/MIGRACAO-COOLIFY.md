@@ -79,3 +79,26 @@ copie o valor atual.
   Um repositório privado exige entregar o código sob pedido a quem recebeu os binários.
 - **Não verificado:** a troca de imagem em um servidor real e a compatibilidade de agentes antigos (.NET 8) com o servidor
   (.NET 10). Faça com um dispositivo seu antes de todos.
+
+## Deploy automático
+
+A cada merge na `main` (fora mudanças só de documentação), o workflow **Release** roda os testes do servidor,
+publica a imagem em `ghcr.io/brendoncarvalho/remotamente:latest` e, no fim, chama o webhook de deploy do Coolify.
+Não é preciso rodar o release nem reimplantar à mão.
+
+Configuração (uma vez):
+
+1. **Coolify → Keys & Tokens → API tokens**: crie um token com permissão de deploy (a API precisa estar habilitada em
+   *Settings → Advanced → API Access*).
+2. No recurso do Remotamente: **Webhooks → Deploy Webhook**: copie a URL (termina em `/api/v1/deploy?uuid=...`).
+3. **Desligue o "Auto Deploy" por push do Git** nesse mesmo painel. Senão o Coolify reimplanta na hora do merge, antes
+   da imagem nova estar pronta, e sobe a imagem antiga outra vez.
+4. No GitHub: **Settings → Secrets and variables → Actions → New repository secret**:
+   - `COOLIFY_DEPLOY_URL`: a URL do passo 2;
+   - `COOLIFY_API_TOKEN`: o token do passo 1.
+
+Sem esses dois segredos o release publica a imagem e pula o deploy (aparece um aviso no log).
+
+Cada merge passa a ir para a produção sozinho. Para voltar ao modo manual, apague o job `deploy` do workflow ou
+os segredos. Para desfazer uma versão ruim, reverta o commit na `main` (o release publica a versão anterior) ou fixe
+uma tag de imagem anterior no compose.
