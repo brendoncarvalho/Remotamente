@@ -1,0 +1,87 @@
+name: Web (Next.js)
+
+on:
+  push:
+    branches: [main]
+    paths: ["web/**", ".github/workflows/web.yml"]
+  pull_request:
+    paths: ["web/**", ".github/workflows/web.yml"]
+  workflow_dispatch:
+
+concurrency:
+  group: web-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+          package_json_file: web/package.json
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: web/pnpm-lock.yaml
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm typecheck
+      - run: pnpm build
+
+  image:
+    needs: check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build image
+        run: docker build --build-arg APP_VERSION=${GITHUB_SHA::7} -t remotamente-web web
+      - name: Smoke test
+        run: |
+          docker run -d --name web -p 3000:3000 remotamente-web
+          for i in $(seq 1 20); do
+            curl -fsS http://127.0.0.1:3000/app/api/health && exit 0
+            sleep 2
+          done
+          docker logs web
+          exit 1
+      - name: Login to GHCR
+        if: github.event_name != 'pull_request'
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Push image
+        if: github.event_name != 'pull_request'
+        run: |
+          IMG=ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/remotamente-web
+          docker tag remotamente-web $IMG:latest
+          docker tag remotamente-web $IMG:${GITHUB_SHA::7}
+          docker push $IMG:latest
+          docker push $IMG:${GITHUB_SHA::7}
+
+  deploy:
+    needs: image
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Coolify deploy
+        env:
+          URL: ${{ secrets.COOLIFY_WEB_DEPLOY_URL }}
+          TOKEN: ${{ secrets.COOLIFY_API_TOKEN }}
+        run: |
+          if [ -z "$URL" ] || [ -z "$TOKEN" ]; then
+            echo "::notice::COOLIFY_WEB_DEPLOY_URL/COOLIFY_API_TOKEN ausentes; deploy ignorado."
+            exit 0
+          fi
+          curl --fail-with-body -H "Authorization: Bearer $TOKEN" "$URL"
