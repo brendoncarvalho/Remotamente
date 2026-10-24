@@ -11,7 +11,9 @@ networks:
 
 services:
   remotely:
-    image: immybot/remotely:latest
+    # Imagem do Remotamente (publicada pelo workflow Release). Para voltar ao Remotely original,
+    # troque por immybot/remotely:latest. O banco é compatível nos dois sentidos.
+    image: ghcr.io/brendoncarvalho/remotamente:latest
     container_name: remotely
     volumes:
       - /var/www/remotely:/app/AppData
