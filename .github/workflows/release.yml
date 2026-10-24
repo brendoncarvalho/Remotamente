@@ -1,12 +1,24 @@
 name: Release
 
 # Builds everything the server distributes (agent packages, desktop clients),
-# bakes it into the server image and publishes it to GitHub Container Registry.
-# Mirrors Utilities/Publish.ps1, which only runs on a machine with Visual Studio.
+# bakes it into the server image, publishes it to GitHub Container Registry and
+# then asks Coolify to redeploy. Mirrors Utilities/Publish.ps1, which only runs
+# on a machine with Visual Studio.
+#
+# Runs on every merge to main (docs-only changes are skipped), on v* tags and
+# by hand. The deploy step needs two repository secrets, see
+# docs/MIGRACAO-COOLIFY.md ("Deploy automático"); without them the image is
+# still published and the deploy is skipped with a notice.
 
 on:
   workflow_dispatch:
   push:
+    branches: [ main ]
+    paths-ignore:
+      - 'docs/**'
+      - '**/*.md'
+      - '.github/ISSUE_TEMPLATE/**'
+      - '.github/pull_request_template.md'
     tags: [ 'v*' ]
   # Dry run (no push) when this workflow itself changes.
   pull_request:
@@ -14,6 +26,11 @@ on:
 
 permissions:
   contents: read
+
+# One release at a time; a newer push waits instead of cancelling a half-published image.
+concurrency:
+  group: release
+  cancel-in-progress: false
 
 env:
   DOTNET_CLI_TELEMETRY_OPTOUT: 1
@@ -117,6 +134,11 @@ jobs:
           name: server-content
           path: Server/wwwroot/Content
 
+      - name: Run server tests
+        run: |
+          dotnet test Tests/Shared.Tests --configuration Release
+          dotnet test Tests/Server.Tests --configuration Release
+
       - name: Publish server
         run: >
           dotnet publish Server/Server.csproj
@@ -157,3 +179,25 @@ jobs:
       - name: Push image
         if: github.event_name != 'pull_request'
         run: docker push --all-tags "$IMAGE"
+
+  deploy:
+    name: Redeploy on Coolify
+    runs-on: ubuntu-latest
+    needs: image
+    if: github.event_name != 'pull_request'
+    steps:
+      - name: Trigger the Coolify deploy webhook
+        env:
+          COOLIFY_DEPLOY_URL: ${{ secrets.COOLIFY_DEPLOY_URL }}
+          COOLIFY_API_TOKEN: ${{ secrets.COOLIFY_API_TOKEN }}
+        run: |
+          if [ -z "$COOLIFY_DEPLOY_URL" ] || [ -z "$COOLIFY_API_TOKEN" ]; then
+            echo "::notice::COOLIFY_DEPLOY_URL / COOLIFY_API_TOKEN are not set; image published, deploy skipped."
+            exit 0
+          fi
+          # --fail-with-body: a 401/404 from Coolify must fail the job, not pass silently.
+          curl --silent --show-error --fail-with-body --max-time 60 \
+            -H "Authorization: Bearer $COOLIFY_API_TOKEN" \
+            "$COOLIFY_DEPLOY_URL"
+          echo
+          echo "Deploy requested."
