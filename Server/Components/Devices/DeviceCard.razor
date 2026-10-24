@@ -1,7 +1,7 @@
 ﻿@attribute [Authorize]
 @inherits AuthComponentBase
 
-<div @ref="_card" class="card border-secondary my-3 me-3 device-card @_theme @GetCardStateClass()"
+<div @ref="_card" class="card device-card @_theme @GetCardStateClass()"
      @onclick="ExpandCard"
      @onclick:stopPropagation
      @oncontextmenu="ContextMenuOpening"
@@ -141,6 +141,9 @@
             </div>
             <div>
                 @(MathHelper.GetFormattedPercent(Device.UsedStoragePercent))
+                <div class="usage-bar usage-@(UsageLevel(Device.UsedStoragePercent))" aria-hidden="true">
+                    <span style="width: @(UsageWidth(Device.UsedStoragePercent))%"></span>
+                </div>
             </div>
 
             <div class="font-weight-bold text-info expanded-visible">
@@ -156,6 +159,9 @@
             </div>
             <div>
                 @(MathHelper.GetFormattedPercent(Device.UsedMemoryPercent))
+                <div class="usage-bar usage-@(UsageLevel(Device.UsedMemoryPercent))" aria-hidden="true">
+                    <span style="width: @(UsageWidth(Device.UsedMemoryPercent))%"></span>
+                </div>
             </div>
 
             <div class="font-weight-bold text-info expanded-visible">
@@ -172,6 +178,9 @@
                 </div>
                 <div>
                     @MathHelper.GetFormattedPercent(Device.CpuUtilization)
+                    <div class="usage-bar usage-@(UsageLevel(Device.CpuUtilization))" aria-hidden="true">
+                        <span style="width: @(UsageWidth(Device.CpuUtilization))%"></span>
+                    </div>
                 </div>
             }
 

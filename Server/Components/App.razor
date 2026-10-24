@@ -7,27 +7,28 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=550, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Remotamente</title>
     <base href="/" />
-    <link href="css/site.css" rel="stylesheet" />
-    <link href="Remotely_Server.styles.css" rel="stylesheet" />
-    <script src="interop.js"></script>
+    <link href="css/site.css?v=@_assetVersion" rel="stylesheet" />
+    <link href="Remotely_Server.styles.css?v=@_assetVersion" rel="stylesheet" />
+    <script src="interop.js?v=@_assetVersion"></script>
 
     @if (_theme == Theme.Dark)
     {
-        <link rel="stylesheet" href="/css/Themes/darkly.min.css" />
-        <link rel="stylesheet" href="/css/Themes/darkly.custom.css" />
+        <link rel="stylesheet" href="/css/Themes/darkly.min.css?v=@_assetVersion" />
+        <link rel="stylesheet" href="/css/Themes/darkly.custom.css?v=@_assetVersion" />
     }
     else
     {
-        <link rel="stylesheet" href="/css/Themes/yeti.min.css" />
-        <link rel="stylesheet" href="/css/Themes/yeti.custom.css" />
+        <link rel="stylesheet" href="/css/Themes/yeti.min.css?v=@_assetVersion" />
+        <link rel="stylesheet" href="/css/Themes/yeti.custom.css?v=@_assetVersion" />
     }
+    <link rel="stylesheet" href="/css/remotamente.css?v=@_assetVersion" />
 
     <HeadOutlet @rendermode="RenderModeForPage" />
 </head>
-<body>
+<body class="@(_theme == Theme.Dark ? "rm-dark" : "rm-light")">
     <Routes @rendermode="RenderModeForPage" />
     <script src="_framework/blazor.web.js"></script>
     <script src="/lib/bootstrap/bootstrap.bundle.min.js"></script>
@@ -41,6 +42,9 @@
 
     private RemotelyUser? _user;
     private Theme _theme;
+    // Query string that changes with each build, so browsers and CDNs (e.g. Cloudflare,
+    // which caches .css for hours) never mix stale stylesheets with new markup.
+    private readonly string _assetVersion = AppVersionHelper.GetAppVersion();
 
     protected override async Task OnInitializedAsync()
     {
