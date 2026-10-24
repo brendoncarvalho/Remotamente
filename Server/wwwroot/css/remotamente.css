@@ -564,6 +564,16 @@ body .table.table-dark {
     #deviceControlsWrapper > div { width: 100%; }
 }
 
+/* ---- Terminal dock ------------------------------------------------------
+   The old scoped rule docked it at left: 260px, sized for the previous 250px
+   sidebar; with the 288px sidebar its left edge (the first characters of every
+   line) ended up hidden behind the menu. Below 992px the menu is a drawer. */
+body .terminal-frame { left: 10px !important; right: 10px; }
+
+@media (min-width: 992px) {
+    body .terminal-frame { left: calc(var(--rm-sidebar-w) + 10px) !important; }
+}
+
 /* ---- Small pieces ------------------------------------------------------- */
 #blazor-error-ui { border-radius: 12px 12px 0 0; }
 
