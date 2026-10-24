@@ -1,4 +1,5 @@
 ﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:loc="clr-namespace:Remotely.Desktop.UI"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -22,12 +23,8 @@
   <Grid Margin="15 10 40 15" ColumnDefinitions="Auto, 10, *">
 	  <Image Grid.Column="0" Height="50" Width="50" Source="{Binding Icon}" VerticalAlignment="Center" />
 	  <StackPanel Grid.Column="2" VerticalAlignment="Center">
-        <TextBlock Classes="SectionHeader">
-          Remote Control Active
-        </TextBlock>
-        <TextBlock>
-          A remote control session has started.
-        </TextBlock>
+        <TextBlock Classes="SectionHeader" Text="{x:Static loc:Loc.RemoteControlActive}" />
+        <TextBlock Text="{x:Static loc:Loc.RemoteControlStarted}" />
 	  </StackPanel>
   </Grid>
 </Window>
