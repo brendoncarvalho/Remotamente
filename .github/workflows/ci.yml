@@ -95,12 +95,15 @@ jobs:
 
       - name: Run and check health
         run: |
-          docker run -d --name srv -p 5000:5000 \
+          docker run -d --name srv \
             -e ASPNETCORE_HTTP_PORTS=5000 \
             -e ASPNETCORE_ENVIRONMENT=Production \
             suporteremoto-server:ci
+          # /api/healthcheck only answers requests from the machine itself
+          # (LocalOnlyFilter), so call it from inside the container, like the
+          # image's own HEALTHCHECK does.
           for i in $(seq 1 30); do
-            if curl -fsS http://localhost:5000/api/healthcheck; then
+            if docker exec srv curl -fsS http://localhost:5000/api/healthcheck; then
               echo; echo "Healthy after ${i} attempt(s)."
               exit 0
             fi
