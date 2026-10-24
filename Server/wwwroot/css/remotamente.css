@@ -62,8 +62,9 @@ body.rm-dark, body.rm-light {
     -webkit-font-smoothing: antialiased;
 }
 
-body.rm-dark a, body.rm-light a { color: var(--rm-accent); }
-body.rm-dark a:hover, body.rm-light a:hover { color: var(--rm-accent-text); }
+/* Plain links only: anchors styled as buttons (a.btn) keep their own text color. */
+body.rm-dark a:not(.btn), body.rm-light a:not(.btn) { color: var(--rm-accent); }
+body.rm-dark a:not(.btn):hover, body.rm-light a:not(.btn):hover { color: var(--rm-accent-text); }
 
 h1, h2, h3, h4, h5, h6 { font-weight: 650; letter-spacing: -.01em; }
 h3 { font-size: 1.55rem; margin-bottom: 1rem; }
