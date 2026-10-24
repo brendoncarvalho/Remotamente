@@ -54,7 +54,8 @@ public class LogsManager : ILogsManager
             return;
         }
 
-        await foreach (var file in files.ToAsyncEnumerable())
+        // .NET 10 adds System.Linq.AsyncEnumerable.ToAsyncEnumerable; keep the Shared version (yields between items).
+        await foreach (var file in Shared.Extensions.IEnumerableExtensions.ToAsyncEnumerable(files))
         {
             try
             {
