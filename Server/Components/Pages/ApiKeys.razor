@@ -11,7 +11,7 @@
 @inject IToastService ToastService
 
 
-<h3>API Keys</h3>
+<h3>@L["API Keys"]</h3>
 
 @if (!string.IsNullOrWhiteSpace(_alertMessage))
 {
@@ -26,21 +26,21 @@ else if (User is not null)
 {
     if (!string.IsNullOrWhiteSpace(_newKeySecret))
     {
-        <h5 class="text-warning font-weight-bold mb-2 mt-4">Warning: The key's secret will only be shown once.  Save it now.</h5>
+        <h5 class="text-warning font-weight-bold mb-2 mt-4">@L["Warning: The key's secret will only be shown once.  Save it now."]</h5>
         <h5 class="mb-4">
-            <label class="me-1">Key Secret:</label>
+            <label class="me-1">@L["Key Secret:"]</label>
             <input class="form-control custom-control-inline" readonly value="@_newKeySecret" style="width:400px" />
         </h5>
     }
 
 
     <div class="mb-2 mt-4">
-        <label class="me-1">New Token Name:</label>
+        <label class="me-1">@L["New Token Name:"]</label>
         <input @bind="_createKeyName" @bind:event="oninput"
                class="form-control form-control-sm custom-control-inline me-1 d-inline-block"
                style="width:200px" />
 
-        <button class="btn btn-primary" type="button" @onclick="CreateNewKey">Create</button>
+        <button class="btn btn-primary" type="button" @onclick="CreateNewKey">@L["Create"]</button>
 
         <button class="btn btn-sm btn-secondary ms-2" @onclick="ShowApiKeyHelp">
             <span class="oi oi-question-mark"></span>
@@ -50,9 +50,9 @@ else if (User is not null)
     <table class="table table-dark table-hover table-striped">
         <thead>
             <tr>
-                <th>Name</th>
+                <th>@L["Name"]</th>
                 <th>ID</th>
-                <th>Last Used</th>
+                <th>@L["Last Used"]</th>
                 <th></th>
                 <th></th>
             </tr>
@@ -65,10 +65,10 @@ else if (User is not null)
                     <td>@apiToken.ID</td>
                     <td>@apiToken.LastUsed</td>
                     <td>
-                        <button type="button" class="btn btn-primary" @onclick="() => RenameKey(apiToken.ID)">Rename</button>
+                        <button type="button" class="btn btn-primary" @onclick="() => RenameKey(apiToken.ID)">@L["Rename"]</button>
                     </td>
                     <td>
-                        <button type="submit" class="btn btn-danger" @onclick="() => DeleteKey(apiToken.ID)">Delete</button>
+                        <button type="submit" class="btn btn-danger" @onclick="() => DeleteKey(apiToken.ID)">@L["Delete"]</button>
                     </td>
                 </tr>
             }

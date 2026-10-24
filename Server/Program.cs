@@ -1,4 +1,6 @@
-using Remotely.Server.Extensions;
+﻿using Remotely.Server.Extensions;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
 using Bitbound.SimpleMessenger;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components.Authorization;
@@ -43,6 +45,21 @@ services
     .AddInteractiveServerComponents();
 
 services.AddRazorPages();
+
+services.AddLocalization(options => options.ResourcesPath = "Resources");
+services.Configure<RequestLocalizationOptions>(options =>
+{
+    var supportedCultures = new[] { new CultureInfo("pt-BR"), new CultureInfo("en") };
+    options.DefaultRequestCulture = new RequestCulture("pt-BR");
+    options.SupportedCultures = supportedCultures;
+    options.SupportedUICultures = supportedCultures;
+    // Cookie (set by /culture/set) wins over the browser's Accept-Language.
+    options.RequestCultureProviders = new IRequestCultureProvider[]
+    {
+        new CookieRequestCultureProvider(),
+        new AcceptLanguageHeaderRequestCultureProvider()
+    };
+});
 
 services.AddCascadingAuthenticationState();
 services.AddScoped<IdentityUserAccessor>();
@@ -297,6 +314,8 @@ ConfigureStaticFiles();
 
 app.UseRouting();
 
+app.UseRequestLocalization();
+
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseCors("TrustedOriginPolicy");
@@ -305,6 +324,31 @@ app.UseAntiforgery();
 
 
 app.MapRazorPages();
+app.MapGet("/culture/set", (HttpContext context, string culture, string? redirectUri) =>
+{
+    var supported = context.RequestServices
+        .GetRequiredService<Microsoft.Extensions.Options.IOptions<RequestLocalizationOptions>>()
+        .Value.SupportedUICultures;
+
+    if (supported?.Any(x => x.Name.Equals(culture, StringComparison.OrdinalIgnoreCase)) == true)
+    {
+        context.Response.Cookies.Append(
+            CookieRequestCultureProvider.DefaultCookieName,
+            CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
+            new CookieOptions
+            {
+                Expires = DateTimeOffset.UtcNow.AddYears(1),
+                IsEssential = true,
+                SameSite = SameSiteMode.Lax,
+                Secure = context.Request.IsHttps
+            });
+    }
+
+    var target = !string.IsNullOrEmpty(redirectUri) && Uri.IsWellFormedUriString(redirectUri, UriKind.Relative) && redirectUri.StartsWith('/') && !redirectUri.StartsWith("//")
+        ? redirectUri
+        : "/";
+    return Results.LocalRedirect(target);
+}).AllowAnonymous();
 app.MapHub<DesktopHub>("/hubs/desktop");
 app.MapHub<ViewerHub>("/hubs/viewer");
 app.MapHub<AgentHub>("/hubs/service");

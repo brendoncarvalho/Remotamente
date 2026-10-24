@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="(GPLv3) by Immense Networks." xml:space="preserve"><value>(GPLv3), da Immense Networks.</value></data>
+  <data name="(View All)" xml:space="preserve"><value>(Ver todos)</value></data>
+  <data name="* Requires browser refresh." xml:space="preserve"><value>* Requer atualizar o navegador.</value></data>
+  <data name="A password reset code has been requested for your account." xml:space="preserve"><value>Foi solicitado um código de redefinição de senha para a sua conta.</value></data>
+  <data name="A password reset has been requested for your account. If this was not requested by you, you can ignore this email." xml:space="preserve"><value>Foi solicitada a redefinição de senha da sua conta. Se não foi você, ignore este e-mail.</value></data>
+  <data name="A script will report as having an error if there is anything written to the error output. For CMD, WinPS, and Bash, an exit code of anything other than 0 will also trigger an error. (The integrated PowerShell Core shell does not use exit codes.)" xml:space="preserve"><value>Um script será considerado com erro se algo for escrito na saída de erro. No CMD, WinPS e Bash, um código de saída diferente de 0 também gera erro. (O shell PowerShell Core integrado não usa códigos de saída.)</value></data>
+  <data name="API Keys" xml:space="preserve"><value>Chaves de API</value></data>
+  <data name="API keys should be added to the request header when making API calls. The key should be &quot;X-Api-Key&quot;, and value should be &quot;{key-id}:{key-secret}&quot;. Note the colon in between." xml:space="preserve"><value>As chaves de API devem ser incluídas no cabeçalho da requisição ao chamar a API. O nome do cabeçalho deve ser "X-Api-Key" e o valor "{key-id}:{key-secret}". Observe os dois-pontos no meio.</value></data>
+  <data name="About" xml:space="preserve"><value>Sobre</value></data>
+  <data name="About SuporteRemoto" xml:space="preserve"><value>Sobre o SuporteRemoto</value></data>
+  <data name="Access denied" xml:space="preserve"><value>Acesso negado</value></data>
+  <data name="Access denied." xml:space="preserve"><value>Acesso negado.</value></data>
+  <data name="Account" xml:space="preserve"><value>Conta</value></data>
+  <data name="Actions" xml:space="preserve"><value>Ações</value></data>
+  <data name="Active Users" xml:space="preserve"><value>Usuários ativos</value></data>
+  <data name="Add" xml:space="preserve"><value>Adicionar</value></data>
+  <data name="Add User" xml:space="preserve"><value>Adicionar usuário</value></data>
+  <data name="Add a known proxy" xml:space="preserve"><value>Adicionar um proxy conhecido</value></data>
+  <data name="Add another service to log in." xml:space="preserve"><value>Adicione outro serviço para entrar.</value></data>
+  <data name="Add authenticator app" xml:space="preserve"><value>Adicionar aplicativo autenticador</value></data>
+  <data name="Add banned device ID, name, or IP" xml:space="preserve"><value>Adicionar ID, nome ou IP de dispositivo banido</value></data>
+  <data name="Add new device group" xml:space="preserve"><value>Adicionar novo grupo de dispositivos</value></data>
+  <data name="Add or Edit Schedule" xml:space="preserve"><value>Adicionar ou editar agendamento</value></data>
+  <data name="Add trusted URL" xml:space="preserve"><value>Adicionar URL confiável</value></data>
+  <data name="Admin" xml:space="preserve"><value>Administração</value></data>
+  <data name="Admin?" xml:space="preserve"><value>Administrador?</value></data>
+  <data name="Administrator" xml:space="preserve"><value>Administrador</value></data>
+  <data name="Administrator value set." xml:space="preserve"><value>Valor de administrador definido.</value></data>
+  <data name="Administrators will have access to this management screen as well as all computers." xml:space="preserve"><value>Os administradores terão acesso a esta tela de gerenciamento e a todos os computadores.</value></data>
+  <data name="Agent Outdated" xml:space="preserve"><value>Agente desatualizado</value></data>
+  <data name="Agent Version" xml:space="preserve"><value>Versão do agente</value></data>
+  <data name="Agent Version:" xml:space="preserve"><value>Versão do agente:</value></data>
+  <data name="Alert Details for {0}" xml:space="preserve"><value>Detalhes do alerta de {0}</value></data>
+  <data name="Alert Options" xml:space="preserve"><value>Opções de alerta</value></data>
+  <data name="Alias" xml:space="preserve"><value>Apelido</value></data>
+  <data name="All" xml:space="preserve"><value>Todos</value></data>
+  <data name="All Disks for {0}" xml:space="preserve"><value>Todos os discos de {0}</value></data>
+  <data name="All Override Options:" xml:space="preserve"><value>Todas as opções de substituição:</value></data>
+  <data name="All pending invitations will be shown here and can be revoked by deleting them." xml:space="preserve"><value>Todos os convites pendentes aparecem aqui e podem ser revogados ao excluí-los.</value></data>
+  <data name="All users for the organization are managed here" xml:space="preserve"><value>Todos os usuários da organização são gerenciados aqui</value></data>
+  <data name="Allow API Login" xml:space="preserve"><value>Permitir login pela API</value></data>
+  <data name="An error occurred while processing your request." xml:space="preserve"><value>Ocorreu um erro ao processar sua solicitação.</value></data>
+  <data name="An open-source remote support solution." xml:space="preserve"><value>Uma solução de suporte remoto de código aberto.</value></data>
+  <data name="An unhandled error has occurred." xml:space="preserve"><value>Ocorreu um erro não tratado.</value></data>
+  <data name="Android" xml:space="preserve"><value>Android</value></data>
+  <data name="Application Settings" xml:space="preserve"><value>Configurações do aplicativo</value></data>
+  <data name="Are you sure you want to leave your current organization and join this one?" xml:space="preserve"><value>Tem certeza de que deseja sair da sua organização atual e entrar nesta?</value></data>
+  <data name="Attended Support" xml:space="preserve"><value>Suporte assistido</value></data>
+  <data name="Authenticator app" xml:space="preserve"><value>Aplicativo autenticador</value></data>
+  <data name="Authenticator code" xml:space="preserve"><value>Código do autenticador</value></data>
+  <data name="Banned Devices" xml:space="preserve"><value>Dispositivos banidos</value></data>
+  <data name="Based on" xml:space="preserve"><value>Baseado no</value></data>
+  <data name="Blue" xml:space="preserve"><value>Azul</value></data>
+  <data name="Bootswatch (Bootstrap Themes)" xml:space="preserve"><value>Bootswatch (temas do Bootstrap)</value></data>
+  <data name="Branding" xml:space="preserve"><value>Identidade visual</value></data>
+  <data name="Branding reset." xml:space="preserve"><value>Identidade visual redefinida.</value></data>
+  <data name="Branding saved." xml:space="preserve"><value>Identidade visual salva.</value></data>
+  <data name="CPU" xml:space="preserve"><value>CPU</value></data>
+  <data name="CPU Utilization" xml:space="preserve"><value>Uso de CPU</value></data>
+  <data name="Cancel" xml:space="preserve"><value>Cancelar</value></data>
+  <data name="Change email" xml:space="preserve"><value>Alterar e-mail</value></data>
+  <data name="Change password" xml:space="preserve"><value>Alterar senha</value></data>
+  <data name="Change your account settings" xml:space="preserve"><value>Altere as configurações da sua conta</value></data>
+  <data name="Chat" xml:space="preserve"><value>Chat</value></data>
+  <data name="Chat Response OK?" xml:space="preserve"><value>Resposta do chat OK?</value></data>
+  <data name="Check out the" xml:space="preserve"><value>Confira a página</value></data>
+  <data name="Clear All" xml:space="preserve"><value>Limpar tudo</value></data>
+  <data name="Click here to confirm your account" xml:space="preserve"><value>Clique aqui para confirmar sua conta</value></data>
+  <data name="Clicking the &quot;Open in New Tab&quot; button in a device card's header while it's expanded" xml:space="preserve"><value>Clicando no botão "Abrir em nova aba" no cabeçalho do cartão do dispositivo, com ele expandido</value></data>
+  <data name="Close" xml:space="preserve"><value>Fechar</value></data>
+  <data name="Color Sample:" xml:space="preserve"><value>Amostra de cor:</value></data>
+  <data name="Command Shortcuts" xml:space="preserve"><value>Atalhos de comando</value></data>
+  <data name="Configuration saved." xml:space="preserve"><value>Configuração salva.</value></data>
+  <data name="Configure authenticator app" xml:space="preserve"><value>Configurar aplicativo autenticador</value></data>
+  <data name="Confirm" xml:space="preserve"><value>Confirmar</value></data>
+  <data name="Confirm email" xml:space="preserve"><value>Confirmar e-mail</value></data>
+  <data name="Confirm email change" xml:space="preserve"><value>Confirmar alteração de e-mail</value></data>
+  <data name="Confirm password" xml:space="preserve"><value>Confirmar senha</value></data>
+  <data name="Congratulations!" xml:space="preserve"><value>Parabéns!</value></data>
+  <data name="Congratulations! Your SMTP settings are working!" xml:space="preserve"><value>Parabéns! Suas configurações de SMTP estão funcionando!</value></data>
+  <data name="Copy and paste on a remote computer to install the agent." xml:space="preserve"><value>Copie e cole em um computador remoto para instalar o agente.</value></data>
+  <data name="Create" xml:space="preserve"><value>Criar</value></data>
+  <data name="Create a new account." xml:space="preserve"><value>Crie uma nova conta.</value></data>
+  <data name="Create user failed." xml:space="preserve"><value>Falha ao criar o usuário.</value></data>
+  <data name="Created At" xml:space="preserve"><value>Criado em</value></data>
+  <data name="Created By" xml:space="preserve"><value>Criado por</value></data>
+  <data name="Created script run for {0} devices." xml:space="preserve"><value>Execução de script criada para {0} dispositivos.</value></data>
+  <data name="Creator" xml:space="preserve"><value>Criador</value></data>
+  <data name="Credits" xml:space="preserve"><value>Créditos</value></data>
+  <data name="Credits and Open-Source Licenses" xml:space="preserve"><value>Créditos e licenças de código aberto</value></data>
+  <data name="Critical" xml:space="preserve"><value>Crítico</value></data>
+  <data name="Current Icon" xml:space="preserve"><value>Ícone atual</value></data>
+  <data name="Current User" xml:space="preserve"><value>Usuário atual</value></data>
+  <data name="Dark" xml:space="preserve"><value>Escuro</value></data>
+  <data name="Data Retention in Days" xml:space="preserve"><value>Retenção de dados (dias)</value></data>
+  <data name="Debug" xml:space="preserve"><value>Debug</value></data>
+  <data name="Default Organization" xml:space="preserve"><value>Organização padrão</value></data>
+  <data name="Default Organization For Server" xml:space="preserve"><value>Organização padrão do servidor</value></data>
+  <data name="Default organization set." xml:space="preserve"><value>Organização padrão definida.</value></data>
+  <data name="Delete" xml:space="preserve"><value>Excluir</value></data>
+  <data name="Delete Logs" xml:space="preserve"><value>Excluir logs</value></data>
+  <data name="Delete Personal Data" xml:space="preserve"><value>Excluir dados pessoais</value></data>
+  <data name="Delete User" xml:space="preserve"><value>Excluir usuário</value></data>
+  <data name="Delete command sent." xml:space="preserve"><value>Comando de exclusão enviado.</value></data>
+  <data name="Delete data and close my account" xml:space="preserve"><value>Excluir dados e encerrar minha conta</value></data>
+  <data name="Deleting this data will permanently remove your account, and this cannot be recovered." xml:space="preserve"><value>Excluir esses dados removerá sua conta permanentemente e isso não poderá ser desfeito.</value></data>
+  <data name="Deploy" xml:space="preserve"><value>Implantar</value></data>
+  <data name="Details" xml:space="preserve"><value>Detalhes</value></data>
+  <data name="Device Alias" xml:space="preserve"><value>Apelido do dispositivo</value></data>
+  <data name="Device Alias:" xml:space="preserve"><value>Apelido do dispositivo:</value></data>
+  <data name="Device Details" xml:space="preserve"><value>Detalhes do dispositivo</value></data>
+  <data name="Device Group" xml:space="preserve"><value>Grupo de dispositivos</value></data>
+  <data name="Device Group:" xml:space="preserve"><value>Grupo de dispositivos:</value></data>
+  <data name="Device Groups" xml:space="preserve"><value>Grupos de dispositivos</value></data>
+  <data name="Device ID" xml:space="preserve"><value>ID do dispositivo</value></data>
+  <data name="Device ID is missing.  Please use a valid shortcut to the support page, which will include the device ID." xml:space="preserve"><value>O ID do dispositivo não foi informado. Use um atalho válido para a página de suporte, que inclui o ID do dispositivo.</value></data>
+  <data name="Device ID:" xml:space="preserve"><value>ID do dispositivo:</value></data>
+  <data name="Device Name" xml:space="preserve"><value>Nome do dispositivo</value></data>
+  <data name="Device connection not found" xml:space="preserve"><value>Conexão do dispositivo não encontrada</value></data>
+  <data name="Device details saved." xml:space="preserve"><value>Detalhes do dispositivo salvos.</value></data>
+  <data name="Device group created." xml:space="preserve"><value>Grupo de dispositivos criado.</value></data>
+  <data name="Device groups can be used to restrict user permissions and to filter computers on the main page." xml:space="preserve"><value>Os grupos de dispositivos servem para restringir permissões de usuários e filtrar computadores na página principal.</value></data>
+  <data name="Device must be online to retrieve logs." xml:space="preserve"><value>O dispositivo precisa estar online para obter os logs.</value></data>
+  <data name="Device not found." xml:space="preserve"><value>Dispositivo não encontrado.</value></data>
+  <data name="Device settings saved." xml:space="preserve"><value>Configurações do dispositivo salvas.</value></data>
+  <data name="Device:" xml:space="preserve"><value>Dispositivo:</value></data>
+  <data name="Devices" xml:space="preserve"><value>Dispositivos</value></data>
+  <data name="Devices Online" xml:space="preserve"><value>Dispositivos online</value></data>
+  <data name="Devices Outdated" xml:space="preserve"><value>Dispositivos desatualizados</value></data>
+  <data name="Devices Total" xml:space="preserve"><value>Total de dispositivos</value></data>
+  <data name="Devices refreshed." xml:space="preserve"><value>Dispositivos atualizados.</value></data>
+  <data name="Disable 2FA" xml:space="preserve"><value>Desativar 2FA</value></data>
+  <data name="Disable two-factor authentication (2FA)" xml:space="preserve"><value>Desativar a autenticação em dois fatores (2FA)</value></data>
+  <data name="Disabling 2FA does not change the keys used in authenticator apps. If you wish to change the key" xml:space="preserve"><value>Desativar o 2FA não altera as chaves usadas nos aplicativos autenticadores. Se você quiser alterar a chave</value></data>
+  <data name="Disk" xml:space="preserve"><value>Disco</value></data>
+  <data name="Disk:" xml:space="preserve"><value>Disco:</value></data>
+  <data name="Dismiss" xml:space="preserve"><value>Dispensar</value></data>
+  <data name="Display Name" xml:space="preserve"><value>Nome de exibição</value></data>
+  <data name="Don't have access to your authenticator device? You can" xml:space="preserve"><value>Não tem acesso ao seu dispositivo autenticador? Você pode</value></data>
+  <data name="Download" xml:space="preserve"><value>Baixar</value></data>
+  <data name="Download Logs" xml:space="preserve"><value>Baixar logs</value></data>
+  <data name="Download Script History" xml:space="preserve"><value>Baixar histórico de scripts</value></data>
+  <data name="Download a two-factor authenticator app like Microsoft Authenticator for" xml:space="preserve"><value>Baixe um aplicativo autenticador de dois fatores, como o Microsoft Authenticator para</value></data>
+  <data name="Downloads" xml:space="preserve"><value>Downloads</value></data>
+  <data name="Duration" xml:space="preserve"><value>Duração</value></data>
+  <data name="Edit" xml:space="preserve"><value>Editar</value></data>
+  <data name="Email" xml:space="preserve"><value>E-mail</value></data>
+  <data name="Email of user to add" xml:space="preserve"><value>E-mail do usuário a adicionar</value></data>
+  <data name="Enable 2FA" xml:space="preserve"><value>Ativar 2FA</value></data>
+  <data name="Enable Remote Control Recording" xml:space="preserve"><value>Habilitar gravação do controle remoto</value></data>
+  <data name="Enable Windows Event Log" xml:space="preserve"><value>Habilitar log de eventos do Windows</value></data>
+  <data name="Enforce Attended Access" xml:space="preserve"><value>Exigir acesso assistido</value></data>
+  <data name="Enter a device ID to see its details" xml:space="preserve"><value>Digite um ID de dispositivo para ver os detalhes</value></data>
+  <data name="Enter a name for your organization" xml:space="preserve"><value>Digite um nome para a sua organização</value></data>
+  <data name="Enter a terminal command" xml:space="preserve"><value>Digite um comando do terminal</value></data>
+  <data name="Enter script text here" xml:space="preserve"><value>Digite o texto do script aqui</value></data>
+  <data name="Enter terminal commands that will execute on all selected devices." xml:space="preserve"><value>Digite comandos de terminal que serão executados em todos os dispositivos selecionados.</value></data>
+  <data name="Enter your email." xml:space="preserve"><value>Digite seu e-mail.</value></data>
+  <data name="Environment Variables" xml:space="preserve"><value>Variáveis de ambiente</value></data>
+  <data name="Error" xml:space="preserve"><value>Erro</value></data>
+  <data name="Error sending email. Check the server logs for details." xml:space="preserve"><value>Erro ao enviar o e-mail. Verifique os logs do servidor para mais detalhes.</value></data>
+  <data name="Error sending invititation email." xml:space="preserve"><value>Erro ao enviar o e-mail de convite.</value></data>
+  <data name="Everyone will have access to devices that are not in a group. Only administrators and users in a device group will have access to devices in that group." xml:space="preserve"><value>Todos terão acesso aos dispositivos que não estão em um grupo. Somente administradores e usuários de um grupo terão acesso aos dispositivos desse grupo.</value></data>
+  <data name="Example Install:" xml:space="preserve"><value>Exemplo de instalação:</value></data>
+  <data name="Example Local Install:" xml:space="preserve"><value>Exemplo de instalação local:</value></data>
+  <data name="Example Quiet Install:" xml:space="preserve"><value>Exemplo de instalação silenciosa:</value></data>
+  <data name="Example Quiet Uninstall:" xml:space="preserve"><value>Exemplo de desinstalação silenciosa:</value></data>
+  <data name="Example Uninstall:" xml:space="preserve"><value>Exemplo de desinstalação:</value></data>
+  <data name="External logins" xml:space="preserve"><value>Logins externos</value></data>
+  <data name="Failed to create invite. {0}" xml:space="preserve"><value>Falha ao criar o convite. {0}</value></data>
+  <data name="Failed to generate QR code." xml:space="preserve"><value>Falha ao gerar o QR code.</value></data>
+  <data name="Failed to remove from group." xml:space="preserve"><value>Falha ao remover do grupo.</value></data>
+  <data name="Failed to set clipboard content" xml:space="preserve"><value>Falha ao copiar para a área de transferência</value></data>
+  <data name="File size exceeds the maximum allowed size of {0}MB." xml:space="preserve"><value>O arquivo excede o tamanho máximo permitido de {0} MB.</value></data>
+  <data name="File size must be under 1 MB." xml:space="preserve"><value>O arquivo deve ter menos de 1 MB.</value></data>
+  <data name="File upload completed." xml:space="preserve"><value>Envio do arquivo concluído.</value></data>
+  <data name="File upload started." xml:space="preserve"><value>Envio do arquivo iniciado.</value></data>
+  <data name="Filter:" xml:space="preserve"><value>Filtro:</value></data>
+  <data name="Folder Path" xml:space="preserve"><value>Caminho da pasta</value></data>
+  <data name="For Bash and CMD, you can exit with any non-zero number." xml:space="preserve"><value>No Bash e no CMD, você pode encerrar com qualquer número diferente de zero.</value></data>
+  <data name="For PowerShell Core, any text written Warning or Error output will trigger an alert.To manually generate an error based on some logic in your script, use 'Write-Error' or 'Write-Warning' anywhere in your PowerShell Core script." xml:space="preserve"><value>No PowerShell Core, qualquer texto escrito na saída de Aviso ou de Erro gera um alerta. Para gerar um erro manualmente com base em alguma lógica do seu script, use 'Write-Error' ou 'Write-Warning' em qualquer ponto do script PowerShell Core.</value></data>
+  <data name="For Windows PowerShell, you can manually trigger an alert by using 'Write-Error'." xml:space="preserve"><value>No Windows PowerShell, você pode gerar um alerta manualmente usando 'Write-Error'.</value></data>
+  <data name="For local debugging, enable the" xml:space="preserve"><value>Para depuração local, habilite o ambiente</value></data>
+  <data name="Force Client HTTPS" xml:space="preserve"><value>Forçar HTTPS nos clientes</value></data>
+  <data name="Forget this browser" xml:space="preserve"><value>Esquecer este navegador</value></data>
+  <data name="Forgot password confirmation" xml:space="preserve"><value>Confirmação de senha esquecida</value></data>
+  <data name="Forgot your password?" xml:space="preserve"><value>Esqueceu sua senha?</value></data>
+  <data name="From:" xml:space="preserve"><value>De:</value></data>
+  <data name="Generate Alert" xml:space="preserve"><value>Gerar alerta</value></data>
+  <data name="Generate Recovery Codes" xml:space="preserve"><value>Gerar códigos de recuperação</value></data>
+  <data name="Generate two-factor authentication (2FA) recovery codes" xml:space="preserve"><value>Gerar códigos de recuperação da autenticação em dois fatores (2FA)</value></data>
+  <data name="Generating new recovery codes does not change the keys used in authenticator apps. If you wish to change the key" xml:space="preserve"><value>Gerar novos códigos de recuperação não altera as chaves usadas nos aplicativos autenticadores. Se você quiser alterar a chave</value></data>
+  <data name="Get Support" xml:space="preserve"><value>Obter suporte</value></data>
+  <data name="Go" xml:space="preserve"><value>Ir</value></data>
+  <data name="Google Authenticator for" xml:space="preserve"><value>o Google Authenticator para</value></data>
+  <data name="Green" xml:space="preserve"><value>Verde</value></data>
+  <data name="Hello!" xml:space="preserve"><value>Olá!</value></data>
+  <data name="Hide offline devices" xml:space="preserve"><value>Ocultar dispositivos offline</value></data>
+  <data name="Home" xml:space="preserve"><value>Início</value></data>
+  <data name="ID" xml:space="preserve"><value>ID</value></data>
+  <data name="If a user does not exist, sending an invite will create their account and add them to the current organization. A password reset URL can be generated from the user table." xml:space="preserve"><value>Se o usuário não existir, enviar um convite criará a conta dele e o adicionará à organização atual. Uma URL de redefinição de senha pode ser gerada na tabela de usuários.</value></data>
+  <data name="If devices are offline, run immediately when next connected" xml:space="preserve"><value>Se os dispositivos estiverem offline, executar assim que conectarem novamente</value></data>
+  <data name="If more than one devices is selected, the first device's file system will be used when auto-completing file and directory paths." xml:space="preserve"><value>Se mais de um dispositivo estiver selecionado, o sistema de arquivos do primeiro será usado ao completar caminhos de arquivos e pastas.</value></data>
+  <data name="If offline, run immediately when next connected" xml:space="preserve"><value>Se estiver offline, executar assim que conectar novamente</value></data>
+  <data name="If you do not complete your authenticator app configuration you may lose access to your account." xml:space="preserve"><value>Se você não concluir a configuração do aplicativo autenticador, poderá perder o acesso à sua conta.</value></data>
+  <data name="If you lose your device and don't have the recovery codes you will lose access to your account." xml:space="preserve"><value>Se você perder seu dispositivo e não tiver os códigos de recuperação, perderá o acesso à sua conta.</value></data>
+  <data name="If you reset your authenticator key your authenticator app will not work until you reconfigure it." xml:space="preserve"><value>Se você redefinir a chave do autenticador, seu aplicativo não funcionará até que seja reconfigurado.</value></data>
+  <data name="If you've contributed to any of these projects, thank you!" xml:space="preserve"><value>Se você contribuiu com algum desses projetos, obrigado!</value></data>
+  <data name="Information" xml:space="preserve"><value>Informação</value></data>
+  <data name="Input" xml:space="preserve"><value>Entrada</value></data>
+  <data name="Installable background agents that provide unattended access and remote scripting." xml:space="preserve"><value>Agentes instaláveis em segundo plano que oferecem acesso autônomo e execução remota de scripts.</value></data>
+  <data name="Instant desktop sharing.  No account required." xml:space="preserve"><value>Compartilhamento de tela instantâneo. Não é necessária conta.</value></data>
+  <data name="Invalid date range." xml:space="preserve"><value>Intervalo de datas inválido.</value></data>
+  <data name="Invalid password reset" xml:space="preserve"><value>Redefinição de senha inválida</value></data>
+  <data name="Invalid user" xml:space="preserve"><value>Usuário inválido</value></data>
+  <data name="Invitation ID is missing from the request." xml:space="preserve"><value>O ID do convite não está na solicitação.</value></data>
+  <data name="Invitation deleted." xml:space="preserve"><value>Convite excluído.</value></data>
+  <data name="Invitation sent." xml:space="preserve"><value>Convite enviado.</value></data>
+  <data name="Invitation to Organization in SuporteRemoto" xml:space="preserve"><value>Convite para organização no SuporteRemoto</value></data>
+  <data name="Invitations" xml:space="preserve"><value>Convites</value></data>
+  <data name="Invited User" xml:space="preserve"><value>Usuário convidado</value></data>
+  <data name="It can result in displaying sensitive information from exceptions to end users." xml:space="preserve"><value>Isso pode expor informações sensíveis de exceções aos usuários finais.</value></data>
+  <data name="Join Link" xml:space="preserve"><value>Link de entrada</value></data>
+  <data name="Key Secret:" xml:space="preserve"><value>Segredo da chave:</value></data>
+  <data name="Key created." xml:space="preserve"><value>Chave criada.</value></data>
+  <data name="Key deleted." xml:space="preserve"><value>Chave excluída.</value></data>
+  <data name="Key renamed." xml:space="preserve"><value>Chave renomeada.</value></data>
+  <data name="Known Proxies" xml:space="preserve"><value>Proxies conhecidos</value></data>
+  <data name="Last Online" xml:space="preserve"><value>Última vez online</value></data>
+  <data name="Last Run" xml:space="preserve"><value>Última execução</value></data>
+  <data name="Last Used" xml:space="preserve"><value>Último uso</value></data>
+  <data name="License:" xml:space="preserve"><value>Licença:</value></data>
+  <data name="Light" xml:space="preserve"><value>Claro</value></data>
+  <data name="Link(s)" xml:space="preserve"><value>Link(s)</value></data>
+  <data name="Linux x64 Files Only" xml:space="preserve"><value>Linux x64 (somente arquivos)</value></data>
+  <data name="Locked out" xml:space="preserve"><value>Conta bloqueada</value></data>
+  <data name="Log in" xml:space="preserve"><value>Entrar</value></data>
+  <data name="Logout" xml:space="preserve"><value>Sair</value></data>
+  <data name="Logs deleted." xml:space="preserve"><value>Logs excluídos.</value></data>
+  <data name="MAC Addresses" xml:space="preserve"><value>Endereços MAC</value></data>
+  <data name="MAC Addresses:" xml:space="preserve"><value>Endereços MAC:</value></data>
+  <data name="Manage Organization" xml:space="preserve"><value>Gerenciar organização</value></data>
+  <data name="Manage email" xml:space="preserve"><value>Gerenciar e-mail</value></data>
+  <data name="Manage your account" xml:space="preserve"><value>Gerencie sua conta</value></data>
+  <data name="Manage your external logins" xml:space="preserve"><value>Gerencie seus logins externos</value></data>
+  <data name="Max Concurrent Updates" xml:space="preserve"><value>Máximo de atualizações simultâneas</value></data>
+  <data name="Max Organization Count" xml:space="preserve"><value>Máximo de organizações</value></data>
+  <data name="Memory" xml:space="preserve"><value>Memória</value></data>
+  <data name="Memory Total" xml:space="preserve"><value>Memória total</value></data>
+  <data name="Memory Used" xml:space="preserve"><value>Memória usada</value></data>
+  <data name="Memory Used %" xml:space="preserve"><value>Memória usada %</value></data>
+  <data name="Memory:" xml:space="preserve"><value>Memória:</value></data>
+  <data name="Message of the Day" xml:space="preserve"><value>Mensagem do dia</value></data>
+  <data name="Must be 25 characters or less." xml:space="preserve"><value>Deve ter no máximo 25 caracteres.</value></data>
+  <data name="Must be logged in to download." xml:space="preserve"><value>É preciso estar logado para baixar.</value></data>
+  <data name="NOTE: Give this URL to the user. They must be logged out completely for it to work." xml:space="preserve"><value>OBSERVAÇÃO: entregue esta URL ao usuário. Ele precisa estar completamente desconectado para que funcione.</value></data>
+  <data name="NOTE: These binaries must be manually updated each time a new Docker image is pulled." xml:space="preserve"><value>OBSERVAÇÃO: esses binários precisam ser atualizados manualmente a cada nova imagem Docker baixada.</value></data>
+  <data name="Name" xml:space="preserve"><value>Nome</value></data>
+  <data name="New" xml:space="preserve"><value>Novo</value></data>
+  <data name="New Icon" xml:space="preserve"><value>Novo ícone</value></data>
+  <data name="New Token Name:" xml:space="preserve"><value>Nome do novo token:</value></data>
+  <data name="New email" xml:space="preserve"><value>Novo e-mail</value></data>
+  <data name="New password" xml:space="preserve"><value>Nova senha</value></data>
+  <data name="Next Run" xml:space="preserve"><value>Próxima execução</value></data>
+  <data name="No agents need updating." xml:space="preserve"><value>Nenhum agente precisa de atualização.</value></data>
+  <data name="No devices are selected." xml:space="preserve"><value>Nenhum dispositivo selecionado.</value></data>
+  <data name="No quick scripts saved." xml:space="preserve"><value>Nenhum script rápido salvo.</value></data>
+  <data name="None" xml:space="preserve"><value>Nenhum</value></data>
+  <data name="Normally this would be emailed:" xml:space="preserve"><value>Normalmente isto seria enviado por e-mail:</value></data>
+  <data name="Note: A custom binary for this file hasn't been uploaded yet." xml:space="preserve"><value>Observação: ainda não foi enviado um binário personalizado para este arquivo.</value></data>
+  <data name="Note: Only server admins will have this button." xml:space="preserve"><value>Observação: somente administradores do servidor verão este botão.</value></data>
+  <data name="Note: The first PS Core command or tab completion takes a few moments while the service is starting on the remote device." xml:space="preserve"><value>Observação: o primeiro comando ou autocompletar do PS Core leva alguns instantes enquanto o serviço inicia no dispositivo remoto.</value></data>
+  <data name="Notes" xml:space="preserve"><value>Anotações</value></data>
+  <data name="Notes:" xml:space="preserve"><value>Anotações:</value></data>
+  <data name="OS Description" xml:space="preserve"><value>Descrição do SO</value></data>
+  <data name="Offline" xml:space="preserve"><value>Offline</value></data>
+  <data name="Old password" xml:space="preserve"><value>Senha atual</value></data>
+  <data name="On Error" xml:space="preserve"><value>Em caso de erro</value></data>
+  <data name="Once you have scanned the QR code or input the key above, your two factor authentication app will provide you" xml:space="preserve"><value>Depois de ler o QR code ou digitar a chave acima, seu aplicativo autenticador fornecerá</value></data>
+  <data name="Online" xml:space="preserve"><value>Online</value></data>
+  <data name="Open in New Tab" xml:space="preserve"><value>Abrir em nova aba</value></data>
+  <data name="Open-Source Licenses:" xml:space="preserve"><value>Licenças de código aberto:</value></data>
+  <data name="Options saved" xml:space="preserve"><value>Opções salvas</value></data>
+  <data name="Options saved." xml:space="preserve"><value>Opções salvas.</value></data>
+  <data name="Organization" xml:space="preserve"><value>Organização</value></data>
+  <data name="Organization ID" xml:space="preserve"><value>ID da organização</value></data>
+  <data name="Organization Invite" xml:space="preserve"><value>Convite para organização</value></data>
+  <data name="Organization Name" xml:space="preserve"><value>Nome da organização</value></data>
+  <data name="Organization name changed." xml:space="preserve"><value>Nome da organização alterado.</value></data>
+  <data name="Otherwise, please follow this link to reset your password:" xml:space="preserve"><value>Caso contrário, siga este link para redefinir sua senha:</value></data>
+  <data name="Outdated Devices" xml:space="preserve"><value>Dispositivos desatualizados</value></data>
+  <data name="Outdated Devices:" xml:space="preserve"><value>Dispositivos desatualizados:</value></data>
+  <data name="Output" xml:space="preserve"><value>Saída</value></data>
+  <data name="Page" xml:space="preserve"><value>Página</value></data>
+  <data name="Password" xml:space="preserve"><value>Senha</value></data>
+  <data name="Password Reset" xml:space="preserve"><value>Redefinição de senha</value></data>
+  <data name="Password Reset URL:" xml:space="preserve"><value>URL de redefinição de senha:</value></data>
+  <data name="Persistent Agents" xml:space="preserve"><value>Agentes persistentes</value></data>
+  <data name="Personal data" xml:space="preserve"><value>Dados pessoais</value></data>
+  <data name="Phone" xml:space="preserve"><value>Telefone</value></data>
+  <data name="Phone number" xml:space="preserve"><value>Telefone</value></data>
+  <data name="Platform" xml:space="preserve"><value>Plataforma</value></data>
+  <data name="Platform:" xml:space="preserve"><value>Plataforma:</value></data>
+  <data name="Please check your email to confirm your account." xml:space="preserve"><value>Verifique seu e-mail para confirmar sua conta.</value></data>
+  <data name="Please check your email to reset your password." xml:space="preserve"><value>Verifique seu e-mail para redefinir sua senha.</value></data>
+  <data name="Please choose your username." xml:space="preserve"><value>Escolha seu nome de usuário.</value></data>
+  <data name="Please confirm your SuporteRemoto account by clicking the following link:" xml:space="preserve"><value>Confirme sua conta do SuporteRemoto clicando no link a seguir:</value></data>
+  <data name="Please confirm your new password." xml:space="preserve"><value>Confirme sua nova senha.</value></data>
+  <data name="Please confirm your password." xml:space="preserve"><value>Confirme sua senha.</value></data>
+  <data name="Please enter an email address for this site below and click the Register button to finish" xml:space="preserve"><value>Informe abaixo um endereço de e-mail para este site e clique em Cadastrar para concluir</value></data>
+  <data name="Please enter new email." xml:space="preserve"><value>Informe o novo e-mail.</value></data>
+  <data name="Please enter the code." xml:space="preserve"><value>Informe o código.</value></data>
+  <data name="Please enter your email." xml:space="preserve"><value>Informe seu e-mail.</value></data>
+  <data name="Please enter your name." xml:space="preserve"><value>Informe seu nome.</value></data>
+  <data name="Please enter your new password." xml:space="preserve"><value>Informe sua nova senha.</value></data>
+  <data name="Please enter your old password." xml:space="preserve"><value>Informe sua senha atual.</value></data>
+  <data name="Please enter your password." xml:space="preserve"><value>Informe sua senha.</value></data>
+  <data name="Please enter your phone number (optional)." xml:space="preserve"><value>Informe seu telefone (opcional).</value></data>
+  <data name="Please enter your phone number." xml:space="preserve"><value>Informe seu telefone.</value></data>
+  <data name="Portable Instant Support Clients" xml:space="preserve"><value>Clientes de suporte instantâneo portáteis</value></data>
+  <data name="PowerShell Core is cross-platform and is available on all client operating systems. Bash is available on Windows 10 if WSL (Windows Subsystem for Linux) is installed." xml:space="preserve"><value>O PowerShell Core é multiplataforma e está disponível em todos os sistemas operacionais dos clientes. O Bash está disponível no Windows 10 se o WSL (Subsistema Windows para Linux) estiver instalado.</value></data>
+  <data name="PowerShell is required for tab completion." xml:space="preserve"><value>O PowerShell é necessário para o autocompletar com Tab.</value></data>
+  <data name="Privacy and cookie policy have not been accepted." xml:space="preserve"><value>A política de privacidade e de cookies não foi aceita.</value></data>
+  <data name="Processor Count" xml:space="preserve"><value>Núm. de processadores</value></data>
+  <data name="Product Name" xml:space="preserve"><value>Nome do produto</value></data>
+  <data name="Profile" xml:space="preserve"><value>Perfil</value></data>
+  <data name="Project:" xml:space="preserve"><value>Projeto:</value></data>
+  <data name="Public IP" xml:space="preserve"><value>IP público</value></data>
+  <data name="Public IP:" xml:space="preserve"><value>IP público:</value></data>
+  <data name="Public?" xml:space="preserve"><value>Público?</value></data>
+  <data name="Put these codes in a safe place." xml:space="preserve"><value>Guarde estes códigos em um lugar seguro.</value></data>
+  <data name="QR code" xml:space="preserve"><value>QR code</value></data>
+  <data name="Quick Script?" xml:space="preserve"><value>Script rápido?</value></data>
+  <data name="Quick Scripts" xml:space="preserve"><value>Scripts rápidos</value></data>
+  <data name="Recovery Code" xml:space="preserve"><value>Código de recuperação</value></data>
+  <data name="Recovery code verification" xml:space="preserve"><value>Verificação do código de recuperação</value></data>
+  <data name="Recovery codes" xml:space="preserve"><value>Códigos de recuperação</value></data>
+  <data name="Red" xml:space="preserve"><value>Vermelho</value></data>
+  <data name="Redirect to HTTPS" xml:space="preserve"><value>Redirecionar para HTTPS</value></data>
+  <data name="Refresh" xml:space="preserve"><value>Atualizar</value></data>
+  <data name="Register" xml:space="preserve"><value>Cadastrar</value></data>
+  <data name="Register as a new user" xml:space="preserve"><value>Cadastrar como novo usuário</value></data>
+  <data name="Register confirmation" xml:space="preserve"><value>Confirmação de cadastro</value></data>
+  <data name="Registered Logins" xml:space="preserve"><value>Logins registrados</value></data>
+  <data name="Registration is disabled." xml:space="preserve"><value>O cadastro está desativado.</value></data>
+  <data name="Reload" xml:space="preserve"><value>Recarregar</value></data>
+  <data name="Remember me" xml:space="preserve"><value>Lembrar de mim</value></data>
+  <data name="Remember this machine" xml:space="preserve"><value>Lembrar deste computador</value></data>
+  <data name="Remote Control" xml:space="preserve"><value>Controle remoto</value></data>
+  <data name="Remote Control Notify User" xml:space="preserve"><value>Notificar o usuário no controle remoto</value></data>
+  <data name="Remote Logs" xml:space="preserve"><value>Logs remotos</value></data>
+  <data name="Remove" xml:space="preserve"><value>Remover</value></data>
+  <data name="Removed user from group." xml:space="preserve"><value>Usuário removido do grupo.</value></data>
+  <data name="Rename" xml:space="preserve"><value>Renomear</value></data>
+  <data name="Repeat Interval" xml:space="preserve"><value>Intervalo de repetição</value></data>
+  <data name="Request ID:" xml:space="preserve"><value>ID da solicitação:</value></data>
+  <data name="Require 2FA" xml:space="preserve"><value>Exigir 2FA</value></data>
+  <data name="Require Authentication on Remote Control Page" xml:space="preserve"><value>Exigir autenticação na página de controle remoto</value></data>
+  <data name="Resend" xml:space="preserve"><value>Reenviar</value></data>
+  <data name="Resend email confirmation" xml:space="preserve"><value>Reenviar confirmação de e-mail</value></data>
+  <data name="Reset" xml:space="preserve"><value>Redefinir</value></data>
+  <data name="Reset Code:" xml:space="preserve"><value>Código de redefinição:</value></data>
+  <data name="Reset authenticator app" xml:space="preserve"><value>Redefinir aplicativo autenticador</value></data>
+  <data name="Reset authenticator key" xml:space="preserve"><value>Redefinir chave do autenticador</value></data>
+  <data name="Reset password" xml:space="preserve"><value>Redefinir senha</value></data>
+  <data name="Reset password confirmation" xml:space="preserve"><value>Confirmação de redefinição de senha</value></data>
+  <data name="Reset recovery codes" xml:space="preserve"><value>Redefinir códigos de recuperação</value></data>
+  <data name="Reset your password." xml:space="preserve"><value>Redefina sua senha.</value></data>
+  <data name="Resident Agents" xml:space="preserve"><value>Agentes residentes</value></data>
+  <data name="Right-clicking a device card on the main page while it's collapsed" xml:space="preserve"><value>Clicando com o botão direito no cartão do dispositivo na página principal, com ele recolhido</value></data>
+  <data name="Run" xml:space="preserve"><value>Executar</value></data>
+  <data name="Run Script" xml:space="preserve"><value>Executar script</value></data>
+  <data name="Running script immediately on {0} devices." xml:space="preserve"><value>Executando o script imediatamente em {0} dispositivos.</value></data>
+  <data name="Running script on {0} devices." xml:space="preserve"><value>Executando o script em {0} dispositivos.</value></data>
+  <data name="SMTP Check Certificate Revocation" xml:space="preserve"><value>SMTP: verificar revogação de certificado</value></data>
+  <data name="SMTP Display Name" xml:space="preserve"><value>Nome de exibição SMTP</value></data>
+  <data name="SMTP Email" xml:space="preserve"><value>E-mail SMTP</value></data>
+  <data name="SMTP Host" xml:space="preserve"><value>Servidor SMTP</value></data>
+  <data name="SMTP Local Domain" xml:space="preserve"><value>Domínio local SMTP</value></data>
+  <data name="SMTP Password" xml:space="preserve"><value>Senha SMTP</value></data>
+  <data name="SMTP Port" xml:space="preserve"><value>Porta SMTP</value></data>
+  <data name="SMTP Username" xml:space="preserve"><value>Usuário SMTP</value></data>
+  <data name="Save" xml:space="preserve"><value>Salvar</value></data>
+  <data name="Saved Schedules" xml:space="preserve"><value>Agendamentos salvos</value></data>
+  <data name="Saved Scripts" xml:space="preserve"><value>Scripts salvos</value></data>
+  <data name="Scan the QR Code or enter this key" xml:space="preserve"><value>Leia o QR code ou digite esta chave</value></data>
+  <data name="Schedule Name" xml:space="preserve"><value>Nome do agendamento</value></data>
+  <data name="Schedule deleted." xml:space="preserve"><value>Agendamento excluído.</value></data>
+  <data name="Schedule saved." xml:space="preserve"><value>Agendamento salvo.</value></data>
+  <data name="Script Error Alerts" xml:space="preserve"><value>Alertas de erro de script</value></data>
+  <data name="Script History" xml:space="preserve"><value>Histórico de scripts</value></data>
+  <data name="Script Input/Output" xml:space="preserve"><value>Entrada/saída do script</value></data>
+  <data name="Script Name" xml:space="preserve"><value>Nome do script</value></data>
+  <data name="Script Schedules" xml:space="preserve"><value>Agendamentos de scripts</value></data>
+  <data name="Script copied to clipboard" xml:space="preserve"><value>Script copiado para a área de transferência</value></data>
+  <data name="Script deleted." xml:space="preserve"><value>Script excluído.</value></data>
+  <data name="Script saved." xml:space="preserve"><value>Script salvo.</value></data>
+  <data name="Scripts" xml:space="preserve"><value>Scripts</value></data>
+  <data name="Search" xml:space="preserve"><value>Pesquisar</value></data>
+  <data name="Search device properties" xml:space="preserve"><value>Pesquisar propriedades do dispositivo</value></data>
+  <data name="Select All" xml:space="preserve"><value>Selecionar todos</value></data>
+  <data name="Send Email" xml:space="preserve"><value>Enviar e-mail</value></data>
+  <data name="Send verification email" xml:space="preserve"><value>Enviar e-mail de verificação</value></data>
+  <data name="Server Admins" xml:space="preserve"><value>Administradores do servidor</value></data>
+  <data name="Server Config" xml:space="preserve"><value>Configuração do servidor</value></data>
+  <data name="Server Info" xml:space="preserve"><value>Informações do servidor</value></data>
+  <data name="Server Logs" xml:space="preserve"><value>Logs do servidor</value></data>
+  <data name="Server URL" xml:space="preserve"><value>URL do servidor</value></data>
+  <data name="Server admins updated." xml:space="preserve"><value>Administradores do servidor atualizados.</value></data>
+  <data name="Session failed to start" xml:space="preserve"><value>Falha ao iniciar a sessão</value></data>
+  <data name="Set password" xml:space="preserve"><value>Definir senha</value></data>
+  <data name="Set up authenticator app" xml:space="preserve"><value>Configurar aplicativo autenticador</value></data>
+  <data name="Set your password" xml:space="preserve"><value>Defina sua senha</value></data>
+  <data name="Shell" xml:space="preserve"><value>Shell</value></data>
+  <data name="Shell Shortcuts" xml:space="preserve"><value>Atalhos de shell</value></data>
+  <data name="Show Full" xml:space="preserve"><value>Mostrar completo</value></data>
+  <data name="Show current admins only" xml:space="preserve"><value>Mostrar somente os administradores atuais</value></data>
+  <data name="Show my organization only" xml:space="preserve"><value>Mostrar somente a minha organização</value></data>
+  <data name="Show only mine" xml:space="preserve"><value>Mostrar somente os meus</value></data>
+  <data name="Shown to clients instead of your email" xml:space="preserve"><value>Exibido aos clientes no lugar do seu e-mail</value></data>
+  <data name="Sort" xml:space="preserve"><value>Ordenar</value></data>
+  <data name="Sort Direction" xml:space="preserve"><value>Direção da ordenação</value></data>
+  <data name="Start At" xml:space="preserve"><value>Iniciar em</value></data>
+  <data name="Storage Total" xml:space="preserve"><value>Armazenamento total</value></data>
+  <data name="Storage Used" xml:space="preserve"><value>Armazenamento usado</value></data>
+  <data name="Storage Used %" xml:space="preserve"><value>Armazenamento usado %</value></data>
+  <data name="Submit" xml:space="preserve"><value>Enviar</value></data>
+  <data name="SuporteRemoto Account Confirmation" xml:space="preserve"><value>Confirmação de conta do SuporteRemoto</value></data>
+  <data name="SuporteRemoto Password Reset" xml:space="preserve"><value>Redefinição de senha do SuporteRemoto</value></data>
+  <data name="SuporteRemoto Test Email" xml:space="preserve"><value>E-mail de teste do SuporteRemoto</value></data>
+  <data name="Support Portal" xml:space="preserve"><value>Portal de suporte</value></data>
+  <data name="Swapping to" xml:space="preserve"><value>Alternar para o ambiente</value></data>
+  <data name="Tab completion is available for PowerShell Core (PSCore) and Windows PowerShell (WinPS). Tab and Shift + Tab will cycle through potential completions. Ctrl + Space will show all available completions." xml:space="preserve"><value>O autocompletar com Tab está disponível para PowerShell Core (PSCore) e Windows PowerShell (WinPS). Tab e Shift + Tab percorrem as opções possíveis. Ctrl + Espaço mostra todas as opções disponíveis.</value></data>
+  <data name="Tags" xml:space="preserve"><value>Tags</value></data>
+  <data name="Tags:" xml:space="preserve"><value>Tags:</value></data>
+  <data name="Terminal" xml:space="preserve"><value>Terminal</value></data>
+  <data name="Terminal Help" xml:space="preserve"><value>Ajuda do terminal</value></data>
+  <data name="Test" xml:space="preserve"><value>Testar</value></data>
+  <data name="Test email sent to {0}. Check your inbox (or spam folder)." xml:space="preserve"><value>E-mail de teste enviado para {0}. Verifique sua caixa de entrada (ou a pasta de spam).</value></data>
+  <data name="The Admin checkbox determines if the new user will have administrator privileges in this organization." xml:space="preserve"><value>A caixa Administrador define se o novo usuário terá privilégios de administrador nesta organização.</value></data>
+  <data name="The Development environment shouldn't be enabled for deployed applications." xml:space="preserve"><value>O ambiente de desenvolvimento não deve ser habilitado em aplicações publicadas.</value></data>
+  <data name="The URL of the server that the device connects to (e.g. https://app.example.com)." xml:space="preserve"><value>A URL do servidor ao qual o dispositivo se conecta (ex.: https://app.exemplo.com).</value></data>
+  <data name="The below open-source projects are used in SuporteRemoto." xml:space="preserve"><value>Os projetos de código aberto abaixo são usados no SuporteRemoto.</value></data>
+  <data name="The device ID (GUID) of the computer currently running the script." xml:space="preserve"><value>O ID do dispositivo (GUID) do computador que está executando o script.</value></data>
+  <data name="The password reset link is invalid." xml:space="preserve"><value>O link de redefinição de senha é inválido.</value></data>
+  <data name="The shell shortcuts are used to quickly switch between terminal shells on the main page. If you type one of these shortcuts into the terminal, it will select the corresponding command mode (e.g. PowerShell Core, Bash, etc.)." xml:space="preserve"><value>Os atalhos de shell servem para alternar rapidamente entre os shells do terminal na página principal. Se você digitar um desses atalhos no terminal, o modo de comando correspondente será selecionado (ex.: PowerShell Core, Bash etc.).</value></data>
+  <data name="Theme" xml:space="preserve"><value>Tema</value></data>
+  <data name="There are no external authentication services configured. See this" xml:space="preserve"><value>Não há serviços de autenticação externos configurados. Veja este</value></data>
+  <data name="There are no outdated devices currently online." xml:space="preserve"><value>Não há dispositivos desatualizados online no momento.</value></data>
+  <data name="This account has been locked out, please try again later." xml:space="preserve"><value>Esta conta foi bloqueada. Tente novamente mais tarde.</value></data>
+  <data name="This action only disables 2FA." xml:space="preserve"><value>Esta ação apenas desativa o 2FA.</value></data>
+  <data name="This app does not currently have a real email sender registered, see" xml:space="preserve"><value>Este aplicativo não tem um remetente de e-mail real registrado; veja</value></data>
+  <data name="This option is only available for server administrators. When selected, it sets this organization as the default for the server. If the organization can't be determined in the quick support apps, they will use the default organization's branding." xml:space="preserve"><value>Esta opção está disponível apenas para administradores do servidor. Quando selecionada, define esta organização como a padrão do servidor. Se a organização não puder ser determinada nos aplicativos de suporte rápido, eles usarão a identidade visual da organização padrão.</value></data>
+  <data name="This process disables 2FA until you verify your authenticator app." xml:space="preserve"><value>Este processo desativa o 2FA até que você verifique seu aplicativo autenticador.</value></data>
+  <data name="This sometimes needs to be disabled for Let's Encrypt certificates." xml:space="preserve"><value>Às vezes é necessário desativar isto para certificados Let's Encrypt.</value></data>
+  <data name="Timestamp" xml:space="preserve"><value>Data/hora</value></data>
+  <data name="To use an authenticator app go through the following steps:" xml:space="preserve"><value>Para usar um aplicativo autenticador, siga estes passos:</value></data>
+  <data name="To:" xml:space="preserve"><value>Até:</value></data>
+  <data name="Total Memory" xml:space="preserve"><value>Memória total</value></data>
+  <data name="Total Memory:" xml:space="preserve"><value>Memória total:</value></data>
+  <data name="Total Storage" xml:space="preserve"><value>Armazenamento total</value></data>
+  <data name="Total Storage:" xml:space="preserve"><value>Armazenamento total:</value></data>
+  <data name="Trace" xml:space="preserve"><value>Trace</value></data>
+  <data name="Trusted CORS Origins" xml:space="preserve"><value>Origens CORS confiáveis</value></data>
+  <data name="Two-Factor Authentication Required" xml:space="preserve"><value>Autenticação em dois fatores obrigatória</value></data>
+  <data name="Two-factor authentication" xml:space="preserve"><value>Autenticação em dois fatores</value></data>
+  <data name="Two-factor authentication (2FA)" xml:space="preserve"><value>Autenticação em dois fatores (2FA)</value></data>
+  <data name="Two-factor authentication is required.  Click the button below to set up your authenticator app." xml:space="preserve"><value>A autenticação em dois fatores é obrigatória. Clique no botão abaixo para configurar seu aplicativo autenticador.</value></data>
+  <data name="Type:" xml:space="preserve"><value>Tipo:</value></data>
+  <data name="URI copied to clipboard" xml:space="preserve"><value>URI copiada para a área de transferência</value></data>
+  <data name="Unable to find save path" xml:space="preserve"><value>Não foi possível encontrar o caminho para salvar</value></data>
+  <data name="Unauthorized." xml:space="preserve"><value>Não autorizado.</value></data>
+  <data name="Uninstall" xml:space="preserve"><value>Desinstalar</value></data>
+  <data name="Uninstall:" xml:space="preserve"><value>Desinstalação:</value></data>
+  <data name="Up and down arrow keys will cycle through terminal input history. Ctrl + Q will clear the output window." xml:space="preserve"><value>As setas para cima e para baixo percorrem o histórico de entrada do terminal. Ctrl + Q limpa a janela de saída.</value></data>
+  <data name="Update All" xml:space="preserve"><value>Atualizar todos</value></data>
+  <data name="Update command sent." xml:space="preserve"><value>Comando de atualização enviado.</value></data>
+  <data name="Update password" xml:space="preserve"><value>Atualizar senha</value></data>
+  <data name="Upload File" xml:space="preserve"><value>Enviar arquivo</value></data>
+  <data name="Use HSTS" xml:space="preserve"><value>Usar HSTS</value></data>
+  <data name="Use HTTP Logging" xml:space="preserve"><value>Usar log HTTP</value></data>
+  <data name="Use a local account to log in." xml:space="preserve"><value>Use uma conta local para entrar.</value></data>
+  <data name="Use another service to log in." xml:space="preserve"><value>Use outro serviço para entrar.</value></data>
+  <data name="Use another service to register." xml:space="preserve"><value>Use outro serviço para se cadastrar.</value></data>
+  <data name="User" xml:space="preserve"><value>Usuário</value></data>
+  <data name="User Name" xml:space="preserve"><value>Nome de usuário</value></data>
+  <data name="User Options" xml:space="preserve"><value>Opções do usuário</value></data>
+  <data name="User account created." xml:space="preserve"><value>Conta de usuário criada.</value></data>
+  <data name="User added to group." xml:space="preserve"><value>Usuário adicionado ao grupo.</value></data>
+  <data name="User deleted." xml:space="preserve"><value>Usuário excluído.</value></data>
+  <data name="Username" xml:space="preserve"><value>Nome de usuário</value></data>
+  <data name="Users" xml:space="preserve"><value>Usuários</value></data>
+  <data name="Using API Keys" xml:space="preserve"><value>Usando chaves de API</value></data>
+  <data name="Verification Code" xml:space="preserve"><value>Código de verificação</value></data>
+  <data name="Verify" xml:space="preserve"><value>Verificar</value></data>
+  <data name="Version:" xml:space="preserve"><value>Versão:</value></data>
+  <data name="View Details" xml:space="preserve"><value>Ver detalhes</value></data>
+  <data name="View Only" xml:space="preserve"><value>Somente visualizar</value></data>
+  <data name="WARNING:" xml:space="preserve"><value>ATENÇÃO:</value></data>
+  <data name="Wake" xml:space="preserve"><value>Despertar</value></data>
+  <data name="Wake Device" xml:space="preserve"><value>Despertar dispositivo</value></data>
+  <data name="Wake Devices in Group" xml:space="preserve"><value>Despertar dispositivos do grupo</value></data>
+  <data name="Warning" xml:space="preserve"><value>Aviso</value></data>
+  <data name="Warning: The key's secret will only be shown once.  Save it now." xml:space="preserve"><value>Atenção: o segredo da chave será exibido apenas uma vez. Salve-o agora.</value></data>
+  <data name="We got it! Someone will contact you soon." xml:space="preserve"><value>Recebemos! Alguém entrará em contato em breve.</value></data>
+  <data name="Windows PowerShell Installer" xml:space="preserve"><value>Instalador do Windows PowerShell</value></data>
+  <data name="Windows x64 Files Only" xml:space="preserve"><value>Windows x64 (somente arquivos)</value></data>
+  <data name="Windows x86 Files Only" xml:space="preserve"><value>Windows x86 (somente arquivos)</value></data>
+  <data name="You" xml:space="preserve"><value>Você</value></data>
+  <data name="You can" xml:space="preserve"><value>Você pode</value></data>
+  <data name="You can also go directly to a device's details by:" xml:space="preserve"><value>Você também pode ir direto aos detalhes de um dispositivo:</value></data>
+  <data name="You can join the organization by" xml:space="preserve"><value>Você pode entrar na organização</value></data>
+  <data name="You can upload custom versions of the attended support client (i.e. &quot;Remotely_Desktop.exe&quot;)" xml:space="preserve"><value>Você pode enviar versões personalizadas do cliente de suporte assistido (ex.: "Remotely_Desktop.exe")</value></data>
+  <data name="You can't delete other people's script schedules." xml:space="preserve"><value>Você não pode excluir agendamentos de scripts de outras pessoas.</value></data>
+  <data name="You can't delete other people's scripts." xml:space="preserve"><value>Você não pode excluir scripts de outras pessoas.</value></data>
+  <data name="You can't delete yourself." xml:space="preserve"><value>Você não pode excluir a si mesmo.</value></data>
+  <data name="You can't modify other people's schedules." xml:space="preserve"><value>Você não pode modificar agendamentos de outras pessoas.</value></data>
+  <data name="You can't modify other people's scripts." xml:space="preserve"><value>Você não pode modificar scripts de outras pessoas.</value></data>
+  <data name="You do not have a local username/password for this site. Add a local" xml:space="preserve"><value>Você não tem um usuário/senha local neste site. Adicione uma</value></data>
+  <data name="You do not have access to this resource." xml:space="preserve"><value>Você não tem acesso a este recurso.</value></data>
+  <data name="You have 1 recovery code left." xml:space="preserve"><value>Você tem 1 código de recuperação restante.</value></data>
+  <data name="You have no recovery codes left." xml:space="preserve"><value>Você não tem mais códigos de recuperação.</value></data>
+  <data name="You have requested to log in with a recovery code. This login will not be remembered until you provide" xml:space="preserve"><value>Você pediu para entrar com um código de recuperação. Este login não será lembrado até que você informe</value></data>
+  <data name="You must" xml:space="preserve"><value>Você deve</value></data>
+  <data name="You must accept the policy before you can enable two factor authentication." xml:space="preserve"><value>Você deve aceitar a política antes de ativar a autenticação em dois fatores.</value></data>
+  <data name="You must be logged in to join an organization." xml:space="preserve"><value>Você precisa estar logado para entrar em uma organização.</value></data>
+  <data name="You must select a script to run." xml:space="preserve"><value>Você deve selecionar um script para executar.</value></data>
+  <data name="You must select a script." xml:space="preserve"><value>Você deve selecionar um script.</value></data>
+  <data name="You must select at least one device or device group." xml:space="preserve"><value>Você deve selecionar pelo menos um dispositivo ou grupo de dispositivos.</value></data>
+  <data name="You must select at least one device." xml:space="preserve"><value>Você deve selecionar pelo menos um dispositivo.</value></data>
+  <data name="You should" xml:space="preserve"><value>Você deveria</value></data>
+  <data name="You will leave your current organization and lose access to its agents unless someone is able to invite you back in." xml:space="preserve"><value>Você sairá da sua organização atual e perderá o acesso aos agentes dela, a menos que alguém possa convidá-lo novamente.</value></data>
+  <data name="You've been invited to join an organization in SuporteRemoto." xml:space="preserve"><value>Você foi convidado para entrar em uma organização no SuporteRemoto.</value></data>
+  <data name="You've successfully authenticated with" xml:space="preserve"><value>Você se autenticou com sucesso com</value></data>
+  <data name="You've successfully joined the organization!" xml:space="preserve"><value>Você entrou na organização com sucesso!</value></data>
+  <data name="Your Name" xml:space="preserve"><value>Seu nome</value></data>
+  <data name="Your account contains personal data that you have given us. This page allows you to download or delete that data." xml:space="preserve"><value>Sua conta contém dados pessoais que você nos forneceu. Esta página permite baixar ou excluir esses dados.</value></data>
+  <data name="Your login is protected with an authenticator app. Enter your authenticator code below." xml:space="preserve"><value>Seu login é protegido por um aplicativo autenticador. Digite abaixo o código do autenticador.</value></data>
+  <data name="Your password has been reset. Please" xml:space="preserve"><value>Sua senha foi redefinida. Por favor,</value></data>
+  <data name="about setting up this ASP.NET application to support logging in via external services" xml:space="preserve"><value>sobre como configurar este aplicativo ASP.NET para permitir login por serviços externos</value></data>
+  <data name="account so you can log in without an external login." xml:space="preserve"><value>conta local para poder entrar sem um login externo.</value></data>
+  <data name="an authenticator app code at log in or disable 2FA and log in again." xml:space="preserve"><value>um código do aplicativo autenticador ao entrar ou desative o 2FA e entre novamente.</value></data>
+  <data name="and" xml:space="preserve"><value>e</value></data>
+  <data name="and restarting the app." xml:space="preserve"><value>e reiniciando o aplicativo.</value></data>
+  <data name="and send the download link to end-users when they need support. For example, you could sign" xml:space="preserve"><value>e enviar o link de download aos usuários quando precisarem de suporte. Por exemplo, você pode assinar</value></data>
+  <data name="article" xml:space="preserve"><value>artigo</value></data>
+  <data name="before you can log in with a recovery code." xml:space="preserve"><value>antes de poder entrar com um código de recuperação.</value></data>
+  <data name="click here to log in" xml:space="preserve"><value>clique aqui para entrar</value></data>
+  <data name="clicking here" xml:space="preserve"><value>clicando aqui</value></data>
+  <data name="environment by setting the" xml:space="preserve"><value>definindo a variável</value></data>
+  <data name="environment variable to" xml:space="preserve"><value>como</value></data>
+  <data name="environment will display more detailed information about the error that occurred." xml:space="preserve"><value>exibirá informações mais detalhadas sobre o erro ocorrido.</value></data>
+  <data name="for how to configure a real email sender." xml:space="preserve"><value>para saber como configurar um remetente de e-mail real.</value></data>
+  <data name="generate a new set of recovery codes" xml:space="preserve"><value>gerar um novo conjunto de códigos de recuperação</value></data>
+  <data name="iOS" xml:space="preserve"><value>iOS</value></data>
+  <data name="into your two factor authenticator app. Spaces and casing do not matter." xml:space="preserve"><value>no seu aplicativo autenticador. Espaços e maiúsculas/minúsculas não importam.</value></data>
+  <data name="log in with a recovery code" xml:space="preserve"><value>entrar com um código de recuperação</value></data>
+  <data name="logging in." xml:space="preserve"><value>o login.</value></data>
+  <data name="macOS arm64 Files Only" xml:space="preserve"><value>macOS arm64 (somente arquivos)</value></data>
+  <data name="macOS x64 Files Only" xml:space="preserve"><value>macOS x64 (somente arquivos)</value></data>
+  <data name="of" xml:space="preserve"><value>de</value></data>
+  <data name="or" xml:space="preserve"><value>ou</value></data>
+  <data name="page for a copy-and-paste deploy script!" xml:space="preserve"><value>para um script de implantação pronto para copiar e colar!</value></data>
+  <data name="per page" xml:space="preserve"><value>por página</value></data>
+  <data name="required" xml:space="preserve"><value>obrigatório</value></data>
+  <data name="reset your authenticator keys." xml:space="preserve"><value>redefina as chaves do seu autenticador.</value></data>
+  <data name="the EXE with a commercial certificate so the end-user (hopefully) doesn't see a SmartScreen" xml:space="preserve"><value>o EXE com um certificado comercial para que o usuário (com sorte) não veja o aviso do SmartScreen</value></data>
+  <data name="these docs" xml:space="preserve"><value>esta documentação</value></data>
+  <data name="to" xml:space="preserve"><value>para</value></data>
+  <data name="used in an authenticator app you should" xml:space="preserve"><value>usada em um aplicativo autenticador, você deve</value></data>
+  <data name="warning about the file." xml:space="preserve"><value>sobre o arquivo.</value></data>
+  <data name="with a unique code. Enter the code in the confirmation box below." xml:space="preserve"><value>um código único. Digite o código na caixa de confirmação abaixo.</value></data>
+</root>

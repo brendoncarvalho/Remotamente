@@ -147,11 +147,11 @@ public partial class RunScript : AuthComponentBase
 
         await DataService.AddScriptRun(scriptRun);
 
-        ToastService.ShowToast($"Created script run for {scriptRun.Devices.Count} devices.");
+        ToastService.ShowToast(L["Created script run for {0} devices.", scriptRun.Devices.Count].Value);
 
         await CircuitConnection.RunScript(onlineDevices, _selectedScript.Id, scriptRun.Id, ScriptInputType.OneTimeScript, false);
 
-        ToastService.ShowToast($"Running script immediately on {onlineDevices.Count()} devices.");
+        ToastService.ShowToast(L["Running script immediately on {0} devices.", onlineDevices.Count()].Value);
     }
 
     private async Task ScriptSelected(ScriptTreeNode viewModel)

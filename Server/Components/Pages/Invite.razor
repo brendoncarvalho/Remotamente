@@ -3,35 +3,35 @@
 @inject AuthenticationStateProvider AuthProvider
 @inject IToastService Toasts
 
-<h3>Organization Invite</h3>
+<h3>@L["Organization Invite"]</h3>
 <hr />
 
 <div class="row">
     <div class="col-sm-12">
         @if (_joinSuccessful)
         {
-            <h5>Congratulations!</h5>
+            <h5>@L["Congratulations!"]</h5>
             <p class="text-info">
-                You've successfully joined the organization!
+                @L["You've successfully joined the organization!"]
             </p>
         }
         else if (string.IsNullOrWhiteSpace(InviteId))
         {
             <div>
-                <strong class="text-danger">Invitation ID is missing from the request.</strong>
+                <strong class="text-danger">@L["Invitation ID is missing from the request."]</strong>
             </div>
         }
         else
         {
             <div>
                 <div>
-                    <strong class="text-danger">WARNING: </strong>
-                    <p class="text-danger">You will leave your current organization and lose access to its agents unless someone is able to invite you back in.</p>
-                    <p>Are you sure you want to leave your current organization and join this one?</p>
+                    <strong class="text-danger">@L["WARNING:"] </strong>
+                    <p class="text-danger">@L["You will leave your current organization and lose access to its agents unless someone is able to invite you back in."]</p>
+                    <p>@L["Are you sure you want to leave your current organization and join this one?"]</p>
                 </div>
                 <div class="form-group">
-                    <button type="button" class="btn btn-secondary me-3" onclick="location.assign(location.origin)">Cancel</button>
-                    <button type="button" class="btn btn-danger" @onclick="Confirm">Confirm</button>
+                    <button type="button" class="btn btn-secondary me-3" onclick="location.assign(location.origin)">@L["Cancel"]</button>
+                    <button type="button" class="btn btn-danger" @onclick="Confirm">@L["Confirm"]</button>
                 </div>
             </div>
         }

@@ -5,6 +5,8 @@ using MimeKit;
 using MimeKit.Text;
 using Remotely.Shared.Entities;
 
+using Microsoft.Extensions.Localization;
+
 namespace Remotely.Server.Services;
 
 public interface IEmailSenderEx
@@ -33,12 +35,15 @@ public class EmailSenderEx : IEmailSenderEx, IEmailSender<RemotelyUser>
 {
     private readonly IDataService _dataService;
     private readonly ILogger<EmailSenderEx> _logger;
+    private readonly IStringLocalizer<SharedResource> _localizer;
 
     public EmailSenderEx(
         IDataService dataService,
+        IStringLocalizer<SharedResource> localizer,
         ILogger<EmailSenderEx> logger)
     {
         _dataService = dataService;
+        _localizer = localizer;
         _logger = logger;
     }
 
@@ -46,8 +51,8 @@ public class EmailSenderEx : IEmailSenderEx, IEmailSender<RemotelyUser>
     {
         await SendEmailAsync(
             email,
-            "SuporteRemoto Account Confirmation",
-            "Please confirm your SuporteRemoto account by clicking the following link: " +
+            _localizer["SuporteRemoto Account Confirmation"],
+            _localizer["Please confirm your SuporteRemoto account by clicking the following link:"] + " " +
             $"<a href=\"{confirmationLink}\">{confirmationLink}</a>",
             user.OrganizationID);
     }
@@ -114,8 +119,8 @@ public class EmailSenderEx : IEmailSenderEx, IEmailSender<RemotelyUser>
     {
         await SendEmailAsync(
             email,
-            "SuporteRemoto Password Reset",
-            $"A password reset code has been requested for your account.  Reset Code: {resetCode}",
+            _localizer["SuporteRemoto Password Reset"],
+            $"{_localizer["A password reset code has been requested for your account."]} {_localizer["Reset Code:"]} {resetCode}",
             user.OrganizationID);
     }
 
@@ -123,9 +128,9 @@ public class EmailSenderEx : IEmailSenderEx, IEmailSender<RemotelyUser>
     {
         await SendEmailAsync(
             email,
-            "SuporteRemoto Password Reset",
-            "A password reset has been requested for your account.  If this was not requested by you, you can ignore this email.<br/><br/>" +
-            "Otherwise, please follow this link to reset your password: " +
+            _localizer["SuporteRemoto Password Reset"],
+            _localizer["A password reset has been requested for your account. If this was not requested by you, you can ignore this email."] + "<br/><br/>" +
+            _localizer["Otherwise, please follow this link to reset your password:"] + " " +
             $"<a href=\"{resetLink}\">{resetLink}</a>",
             user.OrganizationID);
     }

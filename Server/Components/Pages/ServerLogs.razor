@@ -9,51 +9,51 @@
 @inject ILogsManager LogsManager
 @inject ILoaderService LoaderService
 
-<h3 class="mb-3">Server Logs</h3>
+<h3 class="mb-3">@L["Server Logs"]</h3>
 
 <div class="buttons-row mb-3">
     <div>
         <button class="btn btn-danger" type="button" @onclick="ClearAllLogs">
-            Delete Logs
+            @L["Delete Logs"]
         </button>
     </div>
     <div>
         <button class="btn btn-primary"
                 onclick="window.open('/API/ServerLogs/Download', '_blank')">
-            Download Logs
+            @L["Download Logs"]
         </button>
     </div>
     <div>
         <button class="btn btn-primary"
                 onclick="window.open('/API/ScriptResults', '_blank')">
-            Download Script History
+            @L["Download Script History"]
         </button>
     </div>
 </div>
 <div class="filters-row mb-3">
     <div style="display:inline-block">
-        <strong>Type:</strong>
+        <strong>@L["Type:"]</strong>
         <br />
         <select class="form-control-sm" @bind="LogLevel">
-            <option value="">All</option>
+            <option value="">@L["All"]</option>
             @foreach (var eventType in Enum.GetValues(typeof(LogLevel)))
             {
-                <option @key="eventType" value="@eventType">@eventType</option>
+                <option @key="eventType" value="@eventType">@L.Translate(eventType.ToString())</option>
             }
         </select>
     </div>
     <div style="display:inline-block">
-        <strong>Filter:</strong>
+        <strong>@L["Filter:"]</strong>
         <br />
         <input type="text" @bind="MessageFilter" @bind:event="oninput" />
     </div>
     <div style="display:inline-block">
-        <strong>From:</strong>
+        <strong>@L["From:"]</strong>
         <br />
         <input type="date" @bind="FromDate" />
     </div>
     <div style="display:inline-block">
-        <strong>To:</strong>
+        <strong>@L["To:"]</strong>
         <br />
         <input type="date" @bind="ToDate" />
     </div>
