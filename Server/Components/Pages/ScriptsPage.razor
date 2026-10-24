@@ -6,13 +6,13 @@
     <TabControl InitialActiveTab="@(ActiveTab ?? "saved-scripts")">
         <TabHeaders>
             <TabHeader Name="saved-scripts" NavigationUri="/scripts/saved-scripts">
-                Saved Scripts
+                @L["Saved Scripts"]
             </TabHeader>
             <TabHeader Name="run-script" NavigationUri="/scripts/run-script">
-                Run Script
+                @L["Run Script"]
             </TabHeader>
             <TabHeader Name="script-schedules" NavigationUri="/scripts/script-schedules">
-                Script Schedules
+                @L["Script Schedules"]
             </TabHeader>
         </TabHeaders>
         <TabContents>

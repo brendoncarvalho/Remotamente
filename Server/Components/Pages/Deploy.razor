@@ -16,10 +16,10 @@
 }
 
 <h4 class="text-success mt-3">
-    Persistent Agents
+    @L["Persistent Agents"]
 </h4>
 <p class="text-info mb-3">
-    Copy and paste on a remote computer to install the agent.
+    @L["Copy and paste on a remote computer to install the agent."]
 </p>
 
 <div class="row">
@@ -65,16 +65,16 @@
 </div>
 
 <h4 class="text-success mt-3">
-    Attended Support
+    @L["Attended Support"]
 </h4>
 <p class="text-info">
-    You can upload custom versions of the attended support client (i.e. "Remotely_Desktop.exe")
-    and send the download link to end-users when they need support. For example, you could sign
-    the EXE with a commercial certificate so the end-user (hopefully) doesn't see a SmartScreen
-    warning about the file.
+    @L["You can upload custom versions of the attended support client (i.e. \"Remotely_Desktop.exe\")"]
+    @L["and send the download link to end-users when they need support. For example, you could sign"]
+    @L["the EXE with a commercial certificate so the end-user (hopefully) doesn't see a SmartScreen"]
+    @L["warning about the file."]
 </p>
 <p class="mb-3 text-warning">
-    NOTE: These binaries must be manually updated each time a new Docker image is pulled.
+    @L["NOTE: These binaries must be manually updated each time a new Docker image is pulled."]
 </p>
 
 <div class="row">
@@ -86,7 +86,7 @@
         @if (_winX64File?.Exists != true)
         {
             <div class="text-danger mb-2">
-                Note: A custom binary for this file hasn't been uploaded yet.
+                @L["Note: A custom binary for this file hasn't been uploaded yet."]
             </div>
         }
         else if (_winX64File?.PhysicalPath is not null)
@@ -102,13 +102,13 @@
                 <FileInputButton ClassNames="btn btn-primary"
                                  OnChanged="HandleWin64FileChanged">
                     <ButtonContent>
-                        <i class="oi oi-data-transfer-upload" title="Upload File"></i>
-                        <span class="ms-2">Upload File</span>
+                        <i class="oi oi-data-transfer-upload" title="@L["Upload File"]"></i>
+                        <span class="ms-2">@L["Upload File"]</span>
                     </ButtonContent>
                 </FileInputButton>
                 <div class="mt-1">
                     <span class="text-primary">
-                        Note: Only server admins will have this button.
+                        @L["Note: Only server admins will have this button."]
                     </span>
                 </div>
             </div>
@@ -131,7 +131,7 @@
         @if (_winX86File?.Exists != true)
         {
             <div class="text-danger mb-2">
-                Note: A custom binary for this file hasn't been uploaded yet.
+                @L["Note: A custom binary for this file hasn't been uploaded yet."]
             </div>
         }
         else if (_winX86File?.PhysicalPath is not null)
@@ -147,13 +147,13 @@
                 <FileInputButton ClassNames="btn btn-primary"
                                  OnChanged="HandleWin86FileChanged">
                     <ButtonContent>
-                        <i class="oi oi-data-transfer-upload" title="Upload File"></i>
-                        <span class="ms-2">Upload File</span>
+                        <i class="oi oi-data-transfer-upload" title="@L["Upload File"]"></i>
+                        <span class="ms-2">@L["Upload File"]</span>
                     </ButtonContent>
                 </FileInputButton>
                 <div class="mt-1">
                     <span class="text-primary">
-                        Note: Only server admins will have this button.
+                        @L["Note: Only server admins will have this button."]
                     </span>
                 </div>
             </div>

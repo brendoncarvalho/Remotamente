@@ -76,7 +76,7 @@ public partial class Terminal : AuthComponentBase, IDisposable
 
             await CircuitConnection.RunScript(CardStore.SelectedDevices, script.Id, scriptRun.Id, ScriptInputType.OneTimeScript, false);
 
-            ToastService.ShowToast($"Running script on {scriptRun.Devices.Count} devices.");
+            ToastService.ShowToast(L["Running script on {0} devices.", scriptRun.Devices.Count].Value);
         });
 
     [Inject]

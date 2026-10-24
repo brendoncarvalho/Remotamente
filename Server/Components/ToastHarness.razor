@@ -5,7 +5,7 @@
     @foreach (var toast in ToastService.Toasts)
     {
         <div @key="toast.Guid" class="toast-message @toast.ClassString" style="animation-delay: @(toast.Expiration.TotalMilliseconds.ToString() + "ms"); @toast.StyleOverrides">
-            @toast.Message
+            @L.Translate(toast.Message)
         </div>
     }
 </div>

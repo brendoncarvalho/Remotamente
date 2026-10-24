@@ -219,7 +219,7 @@ public partial class DeviceDetails : AuthComponentBase
         {
             builder.AddMarkupContent(0, $"<div style='white-space: pre'>{disksString}</div>");
         }
-        ModalService.ShowModal($"All Disks for {_device.DeviceName}", modalBody);
+        ModalService.ShowModal(L["All Disks for {0}", _device.DeviceName ?? ""].Value, modalBody);
     }
 
     private void ShowFullScriptOutput(ScriptResult result)

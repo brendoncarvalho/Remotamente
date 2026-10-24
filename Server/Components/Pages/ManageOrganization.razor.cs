@@ -336,19 +336,19 @@ public partial class ManageOrganization : AuthComponentBase
 
             if (!newInvite.IsSuccess)
             {
-                ToastService.ShowToast($"Failed to create invite. {newInvite.Reason}", classString: "bg-danger");
+                ToastService.ShowToast(L["Failed to create invite. {0}", newInvite.Reason].Value, classString: "bg-danger");
                 return;
             }
 
             var inviteURL = $"{NavManager.BaseUri}Invite/{newInvite.Value.ID}";
-            var emailResult = await EmailSender.SendEmailAsync(invite.InvitedUser, "Invitation to Organization in SuporteRemoto",
+            var emailResult = await EmailSender.SendEmailAsync(invite.InvitedUser, L["Invitation to Organization in SuporteRemoto"],
                     $@"<img src='{NavManager.BaseUri}images/Remotely_Logo.png'/>
                             <br><br>
-                            Hello!
+                            {L["Hello!"]}
                             <br><br>
-                            You've been invited to join an organization in SuporteRemoto.
+                            {L["You've been invited to join an organization in SuporteRemoto."]}
                             <br><br>
-                            You can join the organization by <a href='{HtmlEncoder.Default.Encode(inviteURL)}'>clicking here</a>.",
+                            {L["You can join the organization by"]} <a href='{HtmlEncoder.Default.Encode(inviteURL)}'>{L["clicking here"]}</a>.",
                     User.OrganizationID);
             if (emailResult)
             {

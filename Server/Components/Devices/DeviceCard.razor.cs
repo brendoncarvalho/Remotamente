@@ -229,7 +229,7 @@ public partial class DeviceCard : AuthComponentBase
             if (args.File.Size > AppConstants.MaxUploadFileSize)
             {
                 var maxFileSize = AppConstants.MaxUploadFileSize / 1000 / 1000;
-                ToastService.ShowToast2($"File size exceeds the maximum allowed size of {maxFileSize}MB.", ToastType.Warning);
+                ToastService.ShowToast2(L["File size exceeds the maximum allowed size of {0}MB.", maxFileSize].Value, ToastType.Warning);
                 return;
             }
             
@@ -288,7 +288,7 @@ public partial class DeviceCard : AuthComponentBase
             builder.AddMarkupContent(0, $"<div style='white-space: pre'>{disksString}</div>");
         }
 
-        ModalService.ShowModal($"All Disks for {Device.DeviceName}", modalBody);
+        ModalService.ShowModal(L["All Disks for {0}", Device.DeviceName ?? ""].Value, modalBody);
     }
 
     private void StartChat()
