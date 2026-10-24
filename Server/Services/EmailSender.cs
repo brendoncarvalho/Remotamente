@@ -51,8 +51,8 @@ public class EmailSenderEx : IEmailSenderEx, IEmailSender<RemotelyUser>
     {
         await SendEmailAsync(
             email,
-            _localizer["SuporteRemoto Account Confirmation"],
-            _localizer["Please confirm your SuporteRemoto account by clicking the following link:"] + " " +
+            _localizer["Remotamente Account Confirmation"],
+            _localizer["Please confirm your Remotamente account by clicking the following link:"] + " " +
             $"<a href=\"{confirmationLink}\">{confirmationLink}</a>",
             user.OrganizationID);
     }
@@ -119,7 +119,7 @@ public class EmailSenderEx : IEmailSenderEx, IEmailSender<RemotelyUser>
     {
         await SendEmailAsync(
             email,
-            _localizer["SuporteRemoto Password Reset"],
+            _localizer["Remotamente Password Reset"],
             $"{_localizer["A password reset code has been requested for your account."]} {_localizer["Reset Code:"]} {resetCode}",
             user.OrganizationID);
     }
@@ -128,7 +128,7 @@ public class EmailSenderEx : IEmailSenderEx, IEmailSender<RemotelyUser>
     {
         await SendEmailAsync(
             email,
-            _localizer["SuporteRemoto Password Reset"],
+            _localizer["Remotamente Password Reset"],
             _localizer["A password reset has been requested for your account. If this was not requested by you, you can ignore this email."] + "<br/><br/>" +
             _localizer["Otherwise, please follow this link to reset your password:"] + " " +
             $"<a href=\"{resetLink}\">{resetLink}</a>",

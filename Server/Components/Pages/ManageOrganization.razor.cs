@@ -341,12 +341,12 @@ public partial class ManageOrganization : AuthComponentBase
             }
 
             var inviteURL = $"{NavManager.BaseUri}Invite/{newInvite.Value.ID}";
-            var emailResult = await EmailSender.SendEmailAsync(invite.InvitedUser, L["Invitation to Organization in SuporteRemoto"],
+            var emailResult = await EmailSender.SendEmailAsync(invite.InvitedUser, L["Invitation to Organization in Remotamente"],
                     $@"<img src='{NavManager.BaseUri}images/Remotely_Logo.png'/>
                             <br><br>
                             {L["Hello!"]}
                             <br><br>
-                            {L["You've been invited to join an organization in SuporteRemoto."]}
+                            {L["You've been invited to join an organization in Remotamente."]}
                             <br><br>
                             {L["You can join the organization by"]} <a href='{HtmlEncoder.Default.Encode(inviteURL)}'>{L["clicking here"]}</a>.",
                     User.OrganizationID);

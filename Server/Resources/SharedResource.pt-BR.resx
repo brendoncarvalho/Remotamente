@@ -34,7 +34,7 @@
   <data name="API Keys" xml:space="preserve"><value>Chaves de API</value></data>
   <data name="API keys should be added to the request header when making API calls. The key should be &quot;X-Api-Key&quot;, and value should be &quot;{key-id}:{key-secret}&quot;. Note the colon in between." xml:space="preserve"><value>As chaves de API devem ser incluídas no cabeçalho da requisição ao chamar a API. O nome do cabeçalho deve ser "X-Api-Key" e o valor "{key-id}:{key-secret}". Observe os dois-pontos no meio.</value></data>
   <data name="About" xml:space="preserve"><value>Sobre</value></data>
-  <data name="About SuporteRemoto" xml:space="preserve"><value>Sobre o SuporteRemoto</value></data>
+  <data name="About Remotamente" xml:space="preserve"><value>Sobre o Remotamente</value></data>
   <data name="Access denied" xml:space="preserve"><value>Acesso negado</value></data>
   <data name="Access denied." xml:space="preserve"><value>Acesso negado.</value></data>
   <data name="Account" xml:space="preserve"><value>Conta</value></data>
@@ -243,7 +243,7 @@
   <data name="Invitation ID is missing from the request." xml:space="preserve"><value>O ID do convite não está na solicitação.</value></data>
   <data name="Invitation deleted." xml:space="preserve"><value>Convite excluído.</value></data>
   <data name="Invitation sent." xml:space="preserve"><value>Convite enviado.</value></data>
-  <data name="Invitation to Organization in SuporteRemoto" xml:space="preserve"><value>Convite para organização no SuporteRemoto</value></data>
+  <data name="Invitation to Organization in Remotamente" xml:space="preserve"><value>Convite para organização no Remotamente</value></data>
   <data name="Invitations" xml:space="preserve"><value>Convites</value></data>
   <data name="Invited User" xml:space="preserve"><value>Usuário convidado</value></data>
   <data name="It can result in displaying sensitive information from exceptions to end users." xml:space="preserve"><value>Isso pode expor informações sensíveis de exceções aos usuários finais.</value></data>
@@ -331,7 +331,7 @@
   <data name="Please check your email to confirm your account." xml:space="preserve"><value>Verifique seu e-mail para confirmar sua conta.</value></data>
   <data name="Please check your email to reset your password." xml:space="preserve"><value>Verifique seu e-mail para redefinir sua senha.</value></data>
   <data name="Please choose your username." xml:space="preserve"><value>Escolha seu nome de usuário.</value></data>
-  <data name="Please confirm your SuporteRemoto account by clicking the following link:" xml:space="preserve"><value>Confirme sua conta do SuporteRemoto clicando no link a seguir:</value></data>
+  <data name="Please confirm your Remotamente account by clicking the following link:" xml:space="preserve"><value>Confirme sua conta do Remotamente clicando no link a seguir:</value></data>
   <data name="Please confirm your new password." xml:space="preserve"><value>Confirme sua nova senha.</value></data>
   <data name="Please confirm your password." xml:space="preserve"><value>Confirme sua senha.</value></data>
   <data name="Please enter an email address for this site below and click the Register button to finish" xml:space="preserve"><value>Informe abaixo um endereço de e-mail para este site e clique em Cadastrar para concluir</value></data>
@@ -452,9 +452,9 @@
   <data name="Storage Used" xml:space="preserve"><value>Armazenamento usado</value></data>
   <data name="Storage Used %" xml:space="preserve"><value>Armazenamento usado %</value></data>
   <data name="Submit" xml:space="preserve"><value>Enviar</value></data>
-  <data name="SuporteRemoto Account Confirmation" xml:space="preserve"><value>Confirmação de conta do SuporteRemoto</value></data>
-  <data name="SuporteRemoto Password Reset" xml:space="preserve"><value>Redefinição de senha do SuporteRemoto</value></data>
-  <data name="SuporteRemoto Test Email" xml:space="preserve"><value>E-mail de teste do SuporteRemoto</value></data>
+  <data name="Remotamente Account Confirmation" xml:space="preserve"><value>Confirmação de conta do Remotamente</value></data>
+  <data name="Remotamente Password Reset" xml:space="preserve"><value>Redefinição de senha do Remotamente</value></data>
+  <data name="Remotamente Test Email" xml:space="preserve"><value>E-mail de teste do Remotamente</value></data>
   <data name="Support Portal" xml:space="preserve"><value>Portal de suporte</value></data>
   <data name="Swapping to" xml:space="preserve"><value>Alternar para o ambiente</value></data>
   <data name="Tab completion is available for PowerShell Core (PSCore) and Windows PowerShell (WinPS). Tab and Shift + Tab will cycle through potential completions. Ctrl + Space will show all available completions." xml:space="preserve"><value>O autocompletar com Tab está disponível para PowerShell Core (PSCore) e Windows PowerShell (WinPS). Tab e Shift + Tab percorrem as opções possíveis. Ctrl + Espaço mostra todas as opções disponíveis.</value></data>
@@ -467,7 +467,7 @@
   <data name="The Admin checkbox determines if the new user will have administrator privileges in this organization." xml:space="preserve"><value>A caixa Administrador define se o novo usuário terá privilégios de administrador nesta organização.</value></data>
   <data name="The Development environment shouldn't be enabled for deployed applications." xml:space="preserve"><value>O ambiente de desenvolvimento não deve ser habilitado em aplicações publicadas.</value></data>
   <data name="The URL of the server that the device connects to (e.g. https://app.example.com)." xml:space="preserve"><value>A URL do servidor ao qual o dispositivo se conecta (ex.: https://app.exemplo.com).</value></data>
-  <data name="The below open-source projects are used in SuporteRemoto." xml:space="preserve"><value>Os projetos de código aberto abaixo são usados no SuporteRemoto.</value></data>
+  <data name="The below open-source projects are used in Remotamente." xml:space="preserve"><value>Os projetos de código aberto abaixo são usados no Remotamente.</value></data>
   <data name="The device ID (GUID) of the computer currently running the script." xml:space="preserve"><value>O ID do dispositivo (GUID) do computador que está executando o script.</value></data>
   <data name="The password reset link is invalid." xml:space="preserve"><value>O link de redefinição de senha é inválido.</value></data>
   <data name="The shell shortcuts are used to quickly switch between terminal shells on the main page. If you type one of these shortcuts into the terminal, it will select the corresponding command mode (e.g. PowerShell Core, Bash, etc.)." xml:space="preserve"><value>Os atalhos de shell servem para alternar rapidamente entre os shells do terminal na página principal. Se você digitar um desses atalhos no terminal, o modo de comando correspondente será selecionado (ex.: PowerShell Core, Bash etc.).</value></data>
@@ -557,7 +557,7 @@
   <data name="You must select at least one device." xml:space="preserve"><value>Você deve selecionar pelo menos um dispositivo.</value></data>
   <data name="You should" xml:space="preserve"><value>Você deveria</value></data>
   <data name="You will leave your current organization and lose access to its agents unless someone is able to invite you back in." xml:space="preserve"><value>Você sairá da sua organização atual e perderá o acesso aos agentes dela, a menos que alguém possa convidá-lo novamente.</value></data>
-  <data name="You've been invited to join an organization in SuporteRemoto." xml:space="preserve"><value>Você foi convidado para entrar em uma organização no SuporteRemoto.</value></data>
+  <data name="You've been invited to join an organization in Remotamente." xml:space="preserve"><value>Você foi convidado para entrar em uma organização no Remotamente.</value></data>
   <data name="You've successfully authenticated with" xml:space="preserve"><value>Você se autenticou com sucesso com</value></data>
   <data name="You've successfully joined the organization!" xml:space="preserve"><value>Você entrou na organização com sucesso!</value></data>
   <data name="Your Name" xml:space="preserve"><value>Seu nome</value></data>
